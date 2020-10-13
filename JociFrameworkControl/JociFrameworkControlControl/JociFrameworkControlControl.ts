@@ -29,6 +29,7 @@ module TcHmi {
                 }
 
                 protected __elementTemplateRoot!: JQuery;
+                protected __controlButton: JQuery<HTMLButtonElement>
 
 				/**
                   * If raised, the control object exists in control cache and constructor of each inheritation level was called.
@@ -61,7 +62,20 @@ module TcHmi {
                     /**
                      * Initialize everything which is only available while the control is part of the active dom.
                      */
-                    console.log("this is called in the attaach")
+                    this.__controlButton = this.__elementTemplateRoot.find("button")
+                    console.log("this is called in the attaach, with button", this.__controlButton)
+                    this.__controlButton.on("click", () => {
+                        console.log("this button is clicked!")
+                        const currentColor = this.__controlButton.css("background-color")
+                        console.log("CurretnColor", currentColor)
+                        if(currentColor !== "red") {
+                            console.log("setTo Red")
+                            this.__controlButton.css("background-color", "red")
+                        } else {
+                            this.__controlButton.css("background-color", "gray")
+                        }
+                    })
+
                 }
 
                 /**
@@ -70,7 +84,7 @@ module TcHmi {
                 */
                 public __detach() {
                     super.__detach();
-
+                    this.__controlButton.remove("click")
                     /**
                      * Disable everything which is not needed while the control is not part of the active dom.
                      * No need to listen to events for example!
