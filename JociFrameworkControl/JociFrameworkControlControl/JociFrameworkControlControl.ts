@@ -58,6 +58,13 @@ module TcHmi {
                 */
                 public __attach() {
                     super.__attach();
+                    console.log("DO i have read and watch ? ", TcHmi.Symbol.read)
+
+                    const angleSymbol = new TcHmi.Symbol(
+                        "%ctrl%TcHmi_Controls_Beckhoff_TcHmiTextbox::Text%/ctrl%"
+                    )
+
+                    console.log("Whats here? ", angleSymbol.watch)
                     
                     /**
                      * Initialize everything which is only available while the control is part of the active dom.
