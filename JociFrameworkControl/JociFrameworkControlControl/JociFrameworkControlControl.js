@@ -57,6 +57,7 @@ var TcHmi;
                     /**
                      * Initialize everything which is only available while the control is part of the active dom.
                      */
+                    console.log("this is called in the attaach");
                 }
                 /**
                 * @description Is called by tachcontrol() after the control instance is no longer part of the current DOM.

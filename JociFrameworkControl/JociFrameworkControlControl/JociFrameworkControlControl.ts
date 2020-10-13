@@ -57,10 +57,11 @@ module TcHmi {
                 */
                 public __attach() {
                     super.__attach();
-
+                    
                     /**
                      * Initialize everything which is only available while the control is part of the active dom.
                      */
+                    console.log("this is called in the attaach")
                 }
 
                 /**
