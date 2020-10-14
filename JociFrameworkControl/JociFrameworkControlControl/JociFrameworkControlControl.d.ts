@@ -12,10 +12,13 @@ declare module TcHmi {
                 constructor(element: JQuery, pcElement: JQuery, attrs: TcHmi.Controls.ControlAttributeList);
                 protected __elementTemplateRoot: JQuery;
                 protected __controlButton: JQuery<HTMLButtonElement>;
-                protected __postiionDisplay: JQuery<HTMLParagraphElement>;
+                protected __circle: JQuery<HTMLElement>;
+                protected __pointer: JQuery<HTMLElement>;
                 protected __position: string;
                 setPosition(position: string | null): void;
                 getPosition(): string;
+                private __makeBackgroundStyle;
+                private __makePositionStyle;
                 processNewPostiion(): void;
                 /**
                   * If raised, the control object exists in control cache and constructor of each inheritation level was called.

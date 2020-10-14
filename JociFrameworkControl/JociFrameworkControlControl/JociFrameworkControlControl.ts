@@ -30,7 +30,10 @@ module TcHmi {
 
                 protected __elementTemplateRoot!: JQuery;
                 protected __controlButton: JQuery<HTMLButtonElement>
-                protected __postiionDisplay: JQuery<HTMLParagraphElement>
+                protected __circle: JQuery<HTMLElement>
+                protected __pointer: JQuery<HTMLElement>
+
+
                 protected __position: string
 
                 
@@ -46,11 +49,23 @@ module TcHmi {
                     return this.__position
                 }
 
+                private __makeBackgroundStyle(deg: string) {
+                    return `conic-gradient(from 0turn at 0% 100%, lime ${deg}deg, black 0deg)`
+                }
+
+                private __makePositionStyle(deg: string) {
+                    return `rotate(${deg}deg)`
+                }
+
 
                 public processNewPostiion() {
                     console.log("POSTION from this", this.__position)
                     console.log("position from function", this.getPosition())
-                    this.__postiionDisplay.text(this.__position)
+
+                    
+
+                    this.__circle.css("background", this.__makeBackgroundStyle(this.__position))
+                    this.__pointer.css("transform", this.__makePositionStyle(this.__position))
                 }
 
 				/**
@@ -86,8 +101,9 @@ module TcHmi {
                     /**
                      * Initialize everything which is only available while the control is part of the active dom.
                      */
-                    this.__postiionDisplay = this.__elementTemplateRoot.find("p")
                     this.__controlButton = this.__elementTemplateRoot.find("button")
+                    this.__circle = this.__elementTemplateRoot.find(".cirlce")
+                    this.__pointer = this.__elementTemplateRoot.find(".pointer")
 
                     console.log("this is called in the attaach, with button", this.__controlButton)
 

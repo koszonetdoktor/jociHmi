@@ -38,10 +38,17 @@ var TcHmi;
                 getPosition() {
                     return this.__position;
                 }
+                __makeBackgroundStyle(deg) {
+                    return `conic-gradient(from 0turn at 0% 100%, lime ${deg}deg, black 0deg)`;
+                }
+                __makePositionStyle(deg) {
+                    return `rotate(${deg}deg)`;
+                }
                 processNewPostiion() {
                     console.log("POSTION from this", this.__position);
                     console.log("position from function", this.getPosition());
-                    this.__postiionDisplay.text(this.__position);
+                    this.__circle.css("background", this.__makeBackgroundStyle(this.__position));
+                    this.__pointer.css("transform", this.__makePositionStyle(this.__position));
                 }
                 /**
                   * If raised, the control object exists in control cache and constructor of each inheritation level was called.
@@ -73,8 +80,9 @@ var TcHmi;
                     /**
                      * Initialize everything which is only available while the control is part of the active dom.
                      */
-                    this.__postiionDisplay = this.__elementTemplateRoot.find("p");
                     this.__controlButton = this.__elementTemplateRoot.find("button");
+                    this.__circle = this.__elementTemplateRoot.find(".cirlce");
+                    this.__pointer = this.__elementTemplateRoot.find(".pointer");
                     console.log("this is called in the attaach, with button", this.__controlButton);
                     this.__controlButton.on("click", () => {
                         console.log("position", this.getPosition());
