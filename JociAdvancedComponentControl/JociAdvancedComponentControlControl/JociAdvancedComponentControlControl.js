@@ -56,13 +56,15 @@ var TcHmi;
                     super.__attach();
                     console.log("Attacging");
                     const buttonContainer = this.__elementTemplateRoot.find(".button")[0];
+                    console.log("ID", this.__id);
                     // @ts-ignore
-                    // new window.AddButton({
-                    //     target: buttonContainer,
-                    //     props: {
-                    //         color: "red"
-                    //     }
-                    // })
+                    new window.AddButton({
+                        target: buttonContainer,
+                        props: {
+                            color: "red",
+                            eventName: `${this.__id}_angleChange`
+                        }
+                    });
                     /**
                      * Initialize everything which is only available while the control is part of the active dom.
                      */
