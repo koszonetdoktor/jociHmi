@@ -11,7 +11,6 @@ declare module TcHmi {
                  */
                 constructor(element: JQuery, pcElement: JQuery, attrs: TcHmi.Controls.ControlAttributeList);
                 protected __elementTemplateRoot: JQuery;
-                protected __controlButton: JQuery<HTMLButtonElement>;
                 protected __circle: JQuery<HTMLElement>;
                 protected __pointer: JQuery<HTMLElement>;
                 protected __position: string;

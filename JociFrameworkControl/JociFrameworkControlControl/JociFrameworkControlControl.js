@@ -29,7 +29,6 @@ var TcHmi;
                     super(element, pcElement, attrs);
                 }
                 setPosition(position) {
-                    console.log("POSITION:", position);
                     const positionValue = TcHmi.ValueConverter.toString(position);
                     TcHmi.EventProvider.raise(this.__id + '.onPropertyChanged', { propertyName: 'Position' });
                     this.__position = positionValue !== null && positionValue !== void 0 ? positionValue : "";
@@ -80,23 +79,8 @@ var TcHmi;
                     /**
                      * Initialize everything which is only available while the control is part of the active dom.
                      */
-                    this.__controlButton = this.__elementTemplateRoot.find("button");
                     this.__circle = this.__elementTemplateRoot.find(".cirlce");
                     this.__pointer = this.__elementTemplateRoot.find(".pointer");
-                    console.log("this is called in the attaach, with button", this.__controlButton);
-                    this.__controlButton.on("click", () => {
-                        console.log("position", this.getPosition());
-                        console.log("this button is clicked!");
-                        const currentColor = this.__controlButton.css("background-color");
-                        console.log("CurretnColor", currentColor);
-                        if (currentColor !== "red") {
-                            console.log("setTo Red");
-                            this.__controlButton.css("background-color", "red");
-                        }
-                        else {
-                            this.__controlButton.css("background-color", "gray");
-                        }
-                    });
                 }
                 /**
                 * @description Is called by tachcontrol() after the control instance is no longer part of the current DOM.
@@ -104,7 +88,6 @@ var TcHmi;
                 */
                 __detach() {
                     super.__detach();
-                    this.__controlButton.remove("click");
                     /**
                      * Disable everything which is not needed while the control is not part of the active dom.
                      * No need to listen to events for example!
