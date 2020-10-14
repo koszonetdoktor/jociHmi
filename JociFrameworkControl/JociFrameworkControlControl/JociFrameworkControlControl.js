@@ -28,6 +28,12 @@ var TcHmi;
                     /** Call base class constructor */
                     super(element, pcElement, attrs);
                 }
+                setPosition(position) {
+                    this.__position = position;
+                }
+                getPosition() {
+                    return this.__position;
+                }
                 /**
                   * If raised, the control object exists in control cache and constructor of each inheritation level was called.
                   * Call attribute processor functions here to initialize default values!
@@ -54,6 +60,7 @@ var TcHmi;
                 */
                 __attach() {
                     super.__attach();
+                    console.log("ATTACH");
                     console.log("DO i have read and watch ? ", TcHmi.Symbol.read);
                     const angleSymbol = new TcHmi.Symbol("%ctrl%TcHmi_Controls_Beckhoff_TcHmiTextbox::Text%/ctrl%");
                     console.log("Whats here? ", angleSymbol.watch);
@@ -63,6 +70,7 @@ var TcHmi;
                     this.__controlButton = this.__elementTemplateRoot.find("button");
                     console.log("this is called in the attaach, with button", this.__controlButton);
                     this.__controlButton.on("click", () => {
+                        console.log("position", this.getPosition());
                         console.log("this button is clicked!");
                         const currentColor = this.__controlButton.css("background-color");
                         console.log("CurretnColor", currentColor);
