@@ -57,9 +57,9 @@
       "description": "Theme independent style"
     },
     {
-      "name": "JavaScript1.js",
+      "name": "componentSrc.js",
       "type": "JavaScript",
-      "description": "custom componnt build"
+      "description": "custom componnt build from Svelte"
     }
   ],
   "themes": {
