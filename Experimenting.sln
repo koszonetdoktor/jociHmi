@@ -7,6 +7,8 @@ Project("{FE7A1B72-C5B7-4D7C-BB7D-76384D4DE8E1}") = "Experimenting", "Experiment
 EndProject
 Project("{3B740506-4966-4147-AB1F-357FE08946EA}") = "JociFrameworkControl", "JociFrameworkControl\JociFrameworkControl.hmiextproj", "{4F2FB9DC-7E39-497A-B437-3A5D2AA92E3E}"
 EndProject
+Project("{3B740506-4966-4147-AB1F-357FE08946EA}") = "JociAdvancedComponentControl", "JociAdvancedComponentControl\JociAdvancedComponentControl.hmiextproj", "{7C9404DB-9950-406B-A6FF-8B82AFCCF747}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|TwinCAT HMI = Debug|TwinCAT HMI
@@ -21,6 +23,10 @@ Global
 		{4F2FB9DC-7E39-497A-B437-3A5D2AA92E3E}.Debug|TwinCAT HMI.Build.0 = Debug|TwinCAT HMI
 		{4F2FB9DC-7E39-497A-B437-3A5D2AA92E3E}.Release|TwinCAT HMI.ActiveCfg = Release|TwinCAT HMI
 		{4F2FB9DC-7E39-497A-B437-3A5D2AA92E3E}.Release|TwinCAT HMI.Build.0 = Release|TwinCAT HMI
+		{7C9404DB-9950-406B-A6FF-8B82AFCCF747}.Debug|TwinCAT HMI.ActiveCfg = Debug|TwinCAT HMI
+		{7C9404DB-9950-406B-A6FF-8B82AFCCF747}.Debug|TwinCAT HMI.Build.0 = Debug|TwinCAT HMI
+		{7C9404DB-9950-406B-A6FF-8B82AFCCF747}.Release|TwinCAT HMI.ActiveCfg = Release|TwinCAT HMI
+		{7C9404DB-9950-406B-A6FF-8B82AFCCF747}.Release|TwinCAT HMI.Build.0 = Release|TwinCAT HMI
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

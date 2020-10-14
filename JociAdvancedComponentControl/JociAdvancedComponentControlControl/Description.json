@@ -55,6 +55,11 @@
       "name": "Style.css",
       "type": "Stylesheet",
       "description": "Theme independent style"
+    },
+    {
+      "name": "JavaScript1.js",
+      "type": "JavaScript",
+      "description": "custom componnt build"
     }
   ],
   "themes": {
@@ -69,6 +74,22 @@
     }
   },
   "attributes": [
+    {
+      "name": "data-tchmi-angle",
+      "displayName": "Angle",
+      "propertyName": "Angle",
+      "propertySetterName": "setAngle",
+      "propertyGetterName": "getAngle",
+      "visible": true,
+      "type": "tchmi:general#/definitions/REAL",
+      "category": "Custom",
+      "description": "This will show the angle position for you",
+      "bindable": true,
+      "heritable": true,
+      "allowSymbolExpressionsInObject": true,
+      "defaultValue": null,
+      "defaultValueInternal": ""
+    }
   ],
   "attributeCategories": [],
   "functions": [],

@@ -18,6 +18,8 @@
     <ProjectGuid>7c9404db-9950-406b-a6ff-8b82afccf747</ProjectGuid>
     <ProjectName>JociAdvancedComponentControl</ProjectName>
     <Name>JociAdvancedComponentControl</Name>
+    <HmiInitial>1.12.742.4</HmiInitial>
+    <HmiRecent>1.12.742.4</HmiRecent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|TwinCAT HMI' ">
     <PlatformTarget>TwinCAT HMI</PlatformTarget>
@@ -52,6 +54,9 @@
   <Import Project="$(TwinCATHmi_Tasks)" />
   <Import Project="$(TwinCATHmi_Targets)" />
   <ItemGroup>
+    <Content Include="JociAdvancedComponentControlControl\JavaScript1.js">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="tsconfig.tpl.json">
       <SubType>Content</SubType>
       <Visible>true</Visible>
@@ -85,6 +90,14 @@
       <SubType>Content</SubType>
       <Visible>false</Visible>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
+    <Folder Include="JociAdvancedComponentControlControl\" />
+    <Folder Include="JociAdvancedComponentControlControl\Icons\" />
+    <Folder Include="JociAdvancedComponentControlControl\Schema\" />
+    <Folder Include="JociAdvancedComponentControlControl\Themes\" />
+    <Folder Include="JociAdvancedComponentControlControl\Themes\Base\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(TypeScriptSdkDir)\$(TypeScriptToolsVersion)\build\Microsoft.TypeScript.targets" Condition="Exists('$(TypeScriptSdkDir)\$(TypeScriptToolsVersion)\build\Microsoft.TypeScript.targets')" />

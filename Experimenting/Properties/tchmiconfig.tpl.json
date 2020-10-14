@@ -77,6 +77,10 @@
     {
       "name": "JociFrameworkControl",
       "basePath": "/JociFrameworkControl"
+    },
+    {
+      "name": "JociAdvancedComponentControl",
+      "basePath": "/JociAdvancedComponentControl"
     }
   ]
 }

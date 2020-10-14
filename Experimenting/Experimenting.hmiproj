@@ -340,6 +340,10 @@
     <Folder Include="Themes\Base\Images\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\JociAdvancedComponentControl\JociAdvancedComponentControl.hmiextproj">
+      <Name>JociAdvancedComponentControl</Name>
+      <Project>{7c9404db-9950-406b-a6ff-8b82afccf747}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\JociFrameworkControl\JociFrameworkControl.hmiextproj">
       <Name>JociFrameworkControl</Name>
       <Project>{4f2fb9dc-7e39-497a-b437-3a5d2aa92e3e}</Project>

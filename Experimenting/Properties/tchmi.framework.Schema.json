@@ -6096,6 +6096,12 @@
     "TcHmiUserControlHost": {
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.System.TcHmiUserControlHost"
     },
+    "TcHmi.Controls.JociAdvancedComponentControl.JociAdvancedComponentControlControl": {
+      "type": "object",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkControlType": "JociAdvancedComponentControlControl",
+      "frameworkControlNamespace": "TcHmi.Controls.JociAdvancedComponentControl"
+    },
     "TcHmi.Controls.JociFrameworkControl.JociFrameworkControlControl": {
       "type": "object",
       "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
