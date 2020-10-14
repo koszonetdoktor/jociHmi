@@ -30,15 +30,27 @@ module TcHmi {
 
                 protected __elementTemplateRoot!: JQuery;
                 protected __controlButton: JQuery<HTMLButtonElement>
-                protected __position: number
+                protected __postiionDisplay: JQuery<HTMLParagraphElement>
+                protected __position: string
 
                 
-                public setPosition(position: number) {
-                    this.__position = position
+                public setPosition(position: string | null) {
+                    console.log("POSITION:", position)
+                    const positionValue = TcHmi.ValueConverter.toString(position)
+                    TcHmi.EventProvider.raise(this.__id + '.onPropertyChanged', { propertyName: 'Position' });
+                    this.__position = positionValue ?? ""
+                    this.processNewPostiion()
                 }
 
                 public getPosition() {
                     return this.__position
+                }
+
+
+                public processNewPostiion() {
+                    console.log("POSTION from this", this.__position)
+                    console.log("position from function", this.getPosition())
+                    this.__postiionDisplay.text(this.__position)
                 }
 
 				/**
@@ -60,6 +72,9 @@ module TcHmi {
                  */
                 public __init() {
                     super.__init();
+
+                    // Here the attribute setters have been called arleady
+
                 }
 
                 /**
@@ -68,20 +83,14 @@ module TcHmi {
                 */
                 public __attach() {
                     super.__attach();
-                    console.log("ATTACH")
-                    console.log("DO i have read and watch ? ", TcHmi.Symbol.read)
-
-                    const angleSymbol = new TcHmi.Symbol(
-                        "%ctrl%TcHmi_Controls_Beckhoff_TcHmiTextbox::Text%/ctrl%"
-                    )
-
-                    console.log("Whats here? ", angleSymbol.watch)
-                    
                     /**
                      * Initialize everything which is only available while the control is part of the active dom.
                      */
+                    this.__postiionDisplay = this.__elementTemplateRoot.find("p")
                     this.__controlButton = this.__elementTemplateRoot.find("button")
+
                     console.log("this is called in the attaach, with button", this.__controlButton)
+
                     this.__controlButton.on("click", () => {
 
                         console.log("position", this.getPosition())

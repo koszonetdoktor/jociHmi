@@ -76,14 +76,14 @@
       "propertySetterName": "setPosition",
       "propertyGetterName": "getPosition",
       "visible": true,
-      "type": "tchmi:general#/definitions/INT",
+      "type": "tchmi:general#/definitions/String",
       "category": "Custom",
       "description": "This is my pisition variable that is going to be used to change position",
       "bindable": true,
       "heritable": true,
       "allowSymbolExpressionsInObject": true,
       "defaultValue": null,
-      "defaultValueInternal": null
+      "defaultValueInternal": ""
     }
   ],
   "attributeCategories": [],
