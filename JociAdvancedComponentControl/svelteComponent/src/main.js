@@ -1,5 +1,5 @@
-import AddButtonComponent from "./AddButton.svelte"
+import DoorComponent from "./Door.svelte"
 
-window.AddButton = function (options) {
-    return new AddButtonComponent(options)
+window.DoorComponent = function (options) {
+    return new DoorComponent(options)
 }

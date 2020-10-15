@@ -31,6 +31,28 @@ module TcHmi {
 
                 protected __elementTemplateRoot!: JQuery;
 
+                protected __angle: number
+
+
+                public setAngle(angle: number | null) {
+                    const angleValue = TcHmi.ValueConverter.toNumber(angle)
+                    this.__angle = angleValue ?? 0
+                    TcHmi.EventProvider.raise(this.__id + '.onPropertyChanged', { propertyName: 'Angle' })
+                    this.processNewAngleValue()
+                }
+
+                public getAngle() {
+                    return this.__angle
+                }
+
+                public processNewAngleValue() {
+                    document.dispatchEvent(
+                        new CustomEvent(
+                            `${this.__id}_angleChange`,
+                            {detail: {value: this.__angle}})
+                    )
+                }
+
 				/**
                   * If raised, the control object exists in control cache and constructor of each inheritation level was called.
                   * Call attribute processor functions here to initialize default values!
@@ -64,10 +86,9 @@ module TcHmi {
 
                     console.log("ID", this.__id)
                     // @ts-ignore
-                    new window.AddButton({
+                    new window.DoorComponent({
                         target: buttonContainer,
                         props: {
-                            color: "red",
                             eventName: `${this.__id}_angleChange`
                         }
                     })

@@ -28,6 +28,18 @@ var TcHmi;
                     /** Call base class constructor */
                     super(element, pcElement, attrs);
                 }
+                setAngle(angle) {
+                    const angleValue = TcHmi.ValueConverter.toNumber(angle);
+                    this.__angle = angleValue !== null && angleValue !== void 0 ? angleValue : 0;
+                    TcHmi.EventProvider.raise(this.__id + '.onPropertyChanged', { propertyName: 'Angle' });
+                    this.processNewAngleValue();
+                }
+                getAngle() {
+                    return this.__angle;
+                }
+                processNewAngleValue() {
+                    document.dispatchEvent(new CustomEvent(`${this.__id}_angleChange`, { detail: { value: this.__angle } }));
+                }
                 /**
                   * If raised, the control object exists in control cache and constructor of each inheritation level was called.
                   * Call attribute processor functions here to initialize default values!
@@ -58,10 +70,9 @@ var TcHmi;
                     const buttonContainer = this.__elementTemplateRoot.find(".button")[0];
                     console.log("ID", this.__id);
                     // @ts-ignore
-                    new window.AddButton({
+                    new window.DoorComponent({
                         target: buttonContainer,
                         props: {
-                            color: "red",
                             eventName: `${this.__id}_angleChange`
                         }
                     });

@@ -11,6 +11,10 @@ declare module TcHmi {
                  */
                 constructor(element: JQuery, pcElement: JQuery, attrs: TcHmi.Controls.ControlAttributeList);
                 protected __elementTemplateRoot: JQuery;
+                protected __angle: number;
+                setAngle(angle: number | null): void;
+                getAngle(): number;
+                processNewAngleValue(): void;
                 /**
                   * If raised, the control object exists in control cache and constructor of each inheritation level was called.
                   * Call attribute processor functions here to initialize default values!
