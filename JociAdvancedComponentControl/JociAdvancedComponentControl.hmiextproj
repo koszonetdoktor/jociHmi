@@ -54,7 +54,7 @@
   <Import Project="$(TwinCATHmi_Tasks)" />
   <Import Project="$(TwinCATHmi_Targets)" />
   <ItemGroup>
-    <Content Include="JociAdvancedComponentControlControl\JavaScript1.js">
+    <Content Include="JociAdvancedComponentControlControl\componentSrc.js">
       <SubType>Content</SubType>
     </Content>
     <Content Include="tsconfig.tpl.json">
