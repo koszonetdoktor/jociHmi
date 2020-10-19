@@ -4,12 +4,14 @@
   "description": "",
   "scripts": {
     "build": "rollup -c",
+    "postbuild": "cpx public/dist/componentSrc.js ../AjtoControl/",
     "dev": "rollup -c -w",
     "start": "sirv public"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "11.0.2",
     "@rollup/plugin-node-resolve": "^7.0.0",
+    "cpx": "^1.5.0",
     "rollup": "^1.20.0",
     "rollup-plugin-copy": "^3.3.0",
     "rollup-plugin-livereload": "^1.0.0",

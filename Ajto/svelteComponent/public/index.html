@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <script defer src='../../AjtoControl/componentSrc.js'></script>
+    <script defer src='/dist/componentSrc.js'></script>
     <!-- <script defer src='/Users/gergohalmi/Desktop/git/JociProject/tutirial-svlete/public/addButton/dist/bundle.js'></script>
     <script defer src="/Users/gergohalmi/Desktop/git/JociProject/tutirial-svlete/public/my-component/dist/bundle.js"></script> -->
 
@@ -17,8 +17,11 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function (event) {
-        new DoorComponent({
+        new window.DoorComponent({
             target: document.getElementById("root"),
+            props: {
+                valueChangeEvent: "123"
+            }
         });
     });
 

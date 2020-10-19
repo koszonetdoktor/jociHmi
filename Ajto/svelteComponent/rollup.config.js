@@ -11,7 +11,7 @@ export default {
     output: {
         format: "iife",
         name: "app",
-        file: "../AjtoControl/componentSrc.js", // (2)
+        file: "public/dist/componentSrc.js", // (2)
     },
     plugins: [
         svelte({

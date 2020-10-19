@@ -4,7 +4,7 @@
     let angle
 
     onMount(() => {
-        console.log("Subscribe on event:", eventName)
+        console.log("Subscribe on event:", valueChangeEvent)
         document.addEventListener(valueChangeEvent, eventHandler)
     })
 
@@ -13,7 +13,6 @@
     })
 
     function eventHandler(event) {
-        console.log("ANGLE: ", event.detail.value)
         const {key, value} = event.detail
         console.log("event", key, value)
     }
@@ -21,14 +20,14 @@
 </script>
 
 <!-- <div
-    class="cirlce"
+    class="cirlce"s
     style={`background: conic-gradient(from 0turn at 0% 100%, #1B74F8 ${angle}deg, #102A42 0deg)`}
 >
     <div class="pointer" style={`transform: rotate(${angle}deg)`}></div>
-</div> -->
+</div> -->    
 
 <div>
-    Door component
+    Door component / Somehting Changes 
 </div>
 
 <style>
