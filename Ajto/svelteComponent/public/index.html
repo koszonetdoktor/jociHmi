@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width,initial-scale=1'>
+    <title>Svelte app</title>
+</head>
+
+<body>
+    <script defer src='../../AjtoControl/componentSrc.js'></script>
+    <!-- <script defer src='/Users/gergohalmi/Desktop/git/JociProject/tutirial-svlete/public/addButton/dist/bundle.js'></script>
+    <script defer src="/Users/gergohalmi/Desktop/git/JociProject/tutirial-svlete/public/my-component/dist/bundle.js"></script> -->
+
+<h1>My app</h1>
+
+<div id="root"></div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+        new DoorComponent({
+            target: document.getElementById("root"),
+        });
+    });
+
+</script>
+
+</body>
+</html>

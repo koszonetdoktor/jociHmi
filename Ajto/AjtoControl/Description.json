@@ -55,6 +55,11 @@
       "name": "Style.css",
       "type": "Stylesheet",
       "description": "Theme independent style"
+    },
+    {
+      "name": "componentSrc.js",
+      "type": "JavaScript",
+      "description": "custom componnt build from Svelte"
     }
   ],
   "themes": {
