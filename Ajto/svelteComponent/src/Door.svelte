@@ -22,6 +22,9 @@
     function eventHandler(event) {
         const {key, value} = event.detail
         console.log("event", key, value)
+        if(key === "open_angle") {
+            angle = value
+        }
     }
 
 </script>
@@ -43,7 +46,6 @@
         width: 80px;
         height: 80px;
         border-radius: 0 100% 0 0;
-        border: 1px solid transparent;
         position: relative;
         background: conic-gradient(from 0turn at 0% 100%, transparent 12deg, #109D0D 0deg);
     }
