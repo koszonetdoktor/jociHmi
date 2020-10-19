@@ -1,5 +1,5 @@
 import DoorComponent from "./Door.svelte"
 
-window.DoorComponent = function (options) {
+window.OldDoorComponent = function (options) {
     return new DoorComponent(options)
 }

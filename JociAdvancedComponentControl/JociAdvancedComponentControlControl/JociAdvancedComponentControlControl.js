@@ -70,7 +70,7 @@ var TcHmi;
                     const buttonContainer = this.__elementTemplateRoot.find(".button")[0];
                     console.log("ID", this.__id);
                     // @ts-ignore
-                    new window.DoorComponent({
+                    new window.OldDoorComponent({
                         target: buttonContainer,
                         props: {
                             eventName: `${this.__id}_angleChange`
