@@ -1,5 +1,7 @@
 /// <reference types="Cypress" />
 
+const { capitalize, functionsIn } = require("cypress/types/lodash")
+
 describe("Door", function () {
     before(function () {
         cy.visit("/")
@@ -16,7 +18,62 @@ describe("Door", function () {
         })
     })
 
-    it("chaanging angle", function () {
+    // it("reach end positions", function () {
+    //     const yellowColor = "#9F9F9F"
+
+    //     cy.get("[data-testid=marker_endPosition]").should(
+    //         "have.css",
+    //         "background-color",
+    //         yellowColor
+    //     )
+    // })
+
+    it("change end angle", function () {
+        cy.document().trigger("cypress_value", {
+            detail: {
+                key: "end_angle",
+                value: 50,
+            },
+        })
+
+        cy.get("[data-testid=marker_endPosition]")
+            .invoke("style")
+            .then((style) => {
+                cy.log("STYLE", style)
+            })
+    })
+
+    it("reaches end positions", function () {
+        cy.document().trigger("cypress_value", {
+            detail: {
+                key: "end_position",
+                value: true,
+            },
+        })
+        cy.wait(1000)
+        cy.document().trigger("cypress_value", {
+            detail: {
+                key: "end_position",
+                value: false,
+            },
+        })
+        cy.wait(1000)
+        cy.document().trigger("cypress_value", {
+            detail: {
+                key: "start_position",
+                value: true,
+            },
+        })
+        cy.wait(1000)
+        cy.document().trigger("cypress_value", {
+            detail: {
+                key: "start_position",
+                value: false,
+            },
+        })
+    })
+
+    it("changing angle", function () {
         cy.document().then((doc) => {
             let angle = 0
             let direction = 0
