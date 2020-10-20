@@ -328,8 +328,8 @@
 
     function add_css() {
     	var style = element("style");
-    	style.id = "svelte-d0gv3m-style";
-    	style.textContent = ".cirlce.svelte-d0gv3m{width:80px;height:80px;border-radius:0 100% 0 0;position:relative;background:conic-gradient(from 0turn at 0% 100%, transparent 12deg, #109D0D 0deg)}.base.svelte-d0gv3m{position:absolute;margin:auto;left:0;bottom:0;background:#9F9F9F;width:5%;border-radius:10px;height:105%;transform-origin:bottom left;transform:rotate(90deg)\r\n    }.endPosition.svelte-d0gv3m{background-color:#CBCF06;width:10%}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiRG9vci5zdmVsdGUiLCJzb3VyY2VzIjpbIkRvb3Iuc3ZlbHRlIl0sInNvdXJjZXNDb250ZW50IjpbIjxzY3JpcHQ+XHJcbiAgICBpbXBvcnQgeyBvbkRlc3Ryb3ksIG9uTW91bnQgfSBmcm9tIFwic3ZlbHRlXCJcclxuICAgIGV4cG9ydCBsZXQgdmFsdWVDaGFuZ2VFdmVudFxyXG4gICAgZXhwb3J0IGxldCBlbmRBbmdsZSA9IDgwXHJcbiAgICAkOiBjb3JyZWN0RW5kQW5nbGUgPSA5MCAtIGVuZEFuZ2xlXHJcblxyXG4gICAgbGV0IGhhc1JlYWNoZWRTdGFydCA9IGZhbHNlXHJcbiAgICBsZXQgaGFzUmVhY2hlZEVuZCA9IGZhbHNlXHJcblxyXG4gICAgbGV0IGFuZ2xlID0gMzBcclxuICAgICQ6IGNvcnJlY3RBbmdsZSA9IDkwIC0gYW5nbGVcclxuXHJcbiAgICBvbk1vdW50KCgpID0+IHtcclxuICAgICAgICBjb25zb2xlLmxvZyhcIlN1YnNjcmliZSBvbiBldmVudDpcIiwgdmFsdWVDaGFuZ2VFdmVudClcclxuICAgICAgICBkb2N1bWVudC5hZGRFdmVudExpc3RlbmVyKHZhbHVlQ2hhbmdlRXZlbnQsIGV2ZW50SGFuZGxlcilcclxuICAgIH0pXHJcblxyXG4gICAgb25EZXN0cm95KCgpID0+IHtcclxuICAgICAgICBkb2N1bWVudC5yZW1vdmVFdmVudExpc3RlbmVyKGV2ZW50TmFtZSwgZXZlbnRIYW5kbGVyKVxyXG4gICAgfSlcclxuXHJcbiAgICBmdW5jdGlvbiBldmVudEhhbmRsZXIoZXZlbnQpIHtcclxuICAgICAgICBjb25zdCB7a2V5LCB2YWx1ZX0gPSBldmVudC5kZXRhaWxcclxuICAgICAgICBjb25zb2xlLmxvZyhcImV2ZW50XCIsIGtleSwgdmFsdWUpXHJcbiAgICAgICAgaWYoa2V5ID09PSBcIm9wZW5fYW5nbGVcIikge1xyXG4gICAgICAgICAgICBhbmdsZSA9IHZhbHVlXHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuPC9zY3JpcHQ+XHJcblxyXG48ZGl2XHJcbiAgICBjbGFzcz1cImNpcmxjZVwiXHJcbiAgICBzdHlsZT17YGJhY2tncm91bmQ6IGNvbmljLWdyYWRpZW50KGZyb20gMHR1cm4gYXQgMCUgMTAwJSwgdHJhbnNwYXJlbnQgJHtjb3JyZWN0QW5nbGV9ZGVnLCAjMTA5RDBEIDBkZWcpYH1cclxuPlxyXG4gICAgPGRpdiBjbGFzcz1cImJhc2VcIiBjbGFzczplbmRQb3NpdGlvbj17aGFzUmVhY2hlZEVuZH0gc3R5bGU9e2B0cmFuc2Zvcm06IHJvdGF0ZSgke2NvcnJlY3RFbmRBbmdsZX1kZWcpYH0+PC9kaXY+XHJcbiAgICA8ZGl2IGNsYXNzPVwiYmFzZVwiIGNsYXNzOmVuZFBvc2l0aW9uPXtoYXNSZWFjaGVkU3RhcnR9ID48L2Rpdj5cclxuPC9kaXY+ICAgXHJcblxyXG48ZGl2PlxyXG4gICAgRG9vciBjb21wb25lbnQgLyBTb21laHRpbmcgQ2hhbmdlcyBcclxuPC9kaXY+XHJcblxyXG48c3R5bGU+XHJcbiAgICAuY2lybGNlIHtcclxuICAgICAgICB3aWR0aDogODBweDtcclxuICAgICAgICBoZWlnaHQ6IDgwcHg7XHJcbiAgICAgICAgYm9yZGVyLXJhZGl1czogMCAxMDAlIDAgMDtcclxuICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICAgICAgYmFja2dyb3VuZDogY29uaWMtZ3JhZGllbnQoZnJvbSAwdHVybiBhdCAwJSAxMDAlLCB0cmFuc3BhcmVudCAxMmRlZywgIzEwOUQwRCAwZGVnKTtcclxuICAgIH1cclxuXHJcbiAgICAuYmFzZSB7XHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIG1hcmdpbjogYXV0bztcclxuICAgICAgICBsZWZ0OiAwO1xyXG4gICAgICAgIGJvdHRvbTogMDtcclxuICAgICAgICBiYWNrZ3JvdW5kOiAjOUY5RjlGO1xyXG4gICAgICAgIHdpZHRoOiA1JTtcclxuICAgICAgICBib3JkZXItcmFkaXVzOiAxMHB4O1xyXG4gICAgICAgIGhlaWdodDogMTA1JTtcclxuICAgICAgICB0cmFuc2Zvcm0tb3JpZ2luOiBib3R0b20gbGVmdDtcclxuICAgICAgICB0cmFuc2Zvcm06IHJvdGF0ZSg5MGRlZylcclxuICAgIH1cclxuXHJcbiAgICAuZW5kUG9zaXRpb24ge1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNDQkNGMDY7XHJcbiAgICAgICAgd2lkdGg6IDEwJTtcclxuICAgIH1cclxuPC9zdHlsZT4iXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBNENJLE9BQU8sY0FBQyxDQUFDLEFBQ0wsS0FBSyxDQUFFLElBQUksQ0FDWCxNQUFNLENBQUUsSUFBSSxDQUNaLGFBQWEsQ0FBRSxDQUFDLENBQUMsSUFBSSxDQUFDLENBQUMsQ0FBQyxDQUFDLENBQ3pCLFFBQVEsQ0FBRSxRQUFRLENBQ2xCLFVBQVUsQ0FBRSxlQUFlLElBQUksQ0FBQyxLQUFLLENBQUMsRUFBRSxDQUFDLEVBQUUsQ0FBQyxJQUFJLENBQUMsQ0FBQyxXQUFXLENBQUMsS0FBSyxDQUFDLENBQUMsT0FBTyxDQUFDLElBQUksQ0FBQyxBQUN0RixDQUFDLEFBRUQsS0FBSyxjQUFDLENBQUMsQUFDSCxRQUFRLENBQUUsUUFBUSxDQUNsQixNQUFNLENBQUUsSUFBSSxDQUNaLElBQUksQ0FBRSxDQUFDLENBQ1AsTUFBTSxDQUFFLENBQUMsQ0FDVCxVQUFVLENBQUUsT0FBTyxDQUNuQixLQUFLLENBQUUsRUFBRSxDQUNULGFBQWEsQ0FBRSxJQUFJLENBQ25CLE1BQU0sQ0FBRSxJQUFJLENBQ1osZ0JBQWdCLENBQUUsTUFBTSxDQUFDLElBQUksQ0FDN0IsU0FBUyxDQUFFLE9BQU8sS0FBSyxDQUFDO0lBQzVCLENBQUMsQUFFRCxZQUFZLGNBQUMsQ0FBQyxBQUNWLGdCQUFnQixDQUFFLE9BQU8sQ0FDekIsS0FBSyxDQUFFLEdBQUcsQUFDZCxDQUFDIn0= */";
+    	style.id = "svelte-1ywx79k-style";
+    	style.textContent = ".cirlce.svelte-1ywx79k{width:80px;height:80px;border-radius:0 100% 0 0;position:relative;background:conic-gradient(from 0turn at 0% 100%, transparent 12deg, #109D0D 0deg)}.base.svelte-1ywx79k{position:absolute;margin:auto;left:0;bottom:0;background:#9F9F9F;width:5%;border-radius:10px;height:105%;transform-origin:bottom left;transform:rotate(90deg)\r\n    }.inPosition.svelte-1ywx79k{background-color:#CBCF06;width:10%}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiRG9vci5zdmVsdGUiLCJzb3VyY2VzIjpbIkRvb3Iuc3ZlbHRlIl0sInNvdXJjZXNDb250ZW50IjpbIjxzY3JpcHQ+XHJcbiAgICBpbXBvcnQgeyBvbkRlc3Ryb3ksIG9uTW91bnQgfSBmcm9tIFwic3ZlbHRlXCJcclxuICAgIGV4cG9ydCBsZXQgdmFsdWVDaGFuZ2VFdmVudFxyXG4gICAgXHJcbiAgICBsZXQgaGFzUmVhY2hlZFN0YXJ0ID0gZmFsc2VcclxuICAgIGxldCBoYXNSZWFjaGVkRW5kID0gZmFsc2VcclxuXHJcbiAgICBsZXQgZW5kQW5nbGUgPSA5MFxyXG4gICAgJDogY29ycmVjdEVuZEFuZ2xlID0gOTAgLSBlbmRBbmdsZVxyXG5cclxuICAgIGxldCBvcGVuQW5nbGUgPSAzMFxyXG4gICAgJDogY29ycmVjdEFuZ2xlID0gOTAgLSBvcGVuQW5nbGVcclxuXHJcbiAgICBvbk1vdW50KCgpID0+IHtcclxuICAgICAgICBjb25zb2xlLmxvZyhcIlN1YnNjcmliZSBvbiBldmVudDpcIiwgdmFsdWVDaGFuZ2VFdmVudClcclxuICAgICAgICBkb2N1bWVudC5hZGRFdmVudExpc3RlbmVyKHZhbHVlQ2hhbmdlRXZlbnQsIGV2ZW50SGFuZGxlcilcclxuICAgIH0pXHJcblxyXG4gICAgb25EZXN0cm95KCgpID0+IHtcclxuICAgICAgICBkb2N1bWVudC5yZW1vdmVFdmVudExpc3RlbmVyKGV2ZW50TmFtZSwgZXZlbnRIYW5kbGVyKVxyXG4gICAgfSlcclxuXHJcbiAgICBmdW5jdGlvbiBldmVudEhhbmRsZXIoZXZlbnQpIHtcclxuICAgICAgICBjb25zdCB7a2V5LCB2YWx1ZX0gPSBldmVudC5kZXRhaWxcclxuICAgICAgICBcclxuICAgICAgICBzd2l0Y2goa2V5KSB7XHJcbiAgICAgICAgICAgIGNhc2UgXCJvcGVuX2FuZ2xlXCI6IFxyXG4gICAgICAgICAgICAgICAgb3BlbkFuZ2xlID0gbGltaXRBbmdsZSh2YWx1ZSlcclxuICAgICAgICAgICAgICAgIGJyZWFrIFxyXG4gICAgICAgICAgICBjYXNlIFwiZW5kX2FuZ2xlXCI6IFxyXG4gICAgICAgICAgICAgICAgZW5kQW5nbGUgPSBsaW1pdEFuZ2xlKHZhbHVlKVxyXG4gICAgICAgICAgICAgICAgYnJlYWtcclxuICAgICAgICAgICAgY2FzZSBcImVuZF9wb3NpdGlvblwiOiBcclxuICAgICAgICAgICAgICAgIGhhc1JlYWNoZWRFbmQgPSB2YWx1ZVxyXG4gICAgICAgICAgICAgICAgYnJlYWtcclxuICAgICAgICAgICAgY2FzZSBcInN0YXJ0X3Bvc2l0aW9uXCI6IFxyXG4gICAgICAgICAgICAgICAgaGFzUmVhY2hlZFN0YXJ0ID0gdmFsdWVcclxuICAgICAgICAgICAgICAgIGJyZWFrXHJcbiAgICAgICAgICAgIGRlZmF1bHQ6XHJcbiAgICAgICAgICAgICAgICBicmVha1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICBmdW5jdGlvbiBsaW1pdEFuZ2xlKGFuZ2xlVmFsdWUpIHtcclxuICAgICAgICBsZXQgbGltaXRlZFZhbHVlID0gYW5nbGVWYWx1ZVxyXG4gICAgICAgIGlmKGxpbWl0ZWRWYWx1ZSA+IDkwKSB7XHJcbiAgICAgICAgICAgIGxpbWl0ZWRWYWx1ZSA9IDkwXHJcbiAgICAgICAgfSBlbHNlIGlmKGxpbWl0ZWRWYWx1ZSA8IDApIHtcclxuICAgICAgICAgICAgbGltaXRlZFZhbHVlID0gMFxyXG4gICAgICAgIH1cclxuICAgICAgICByZXR1cm4gbGltaXRlZFZhbHVlXHJcbiAgICB9XHJcblxyXG48L3NjcmlwdD5cclxuXHJcbjxkaXZcclxuICAgIGNsYXNzPVwiY2lybGNlXCJcclxuICAgIHN0eWxlPXtgYmFja2dyb3VuZDogY29uaWMtZ3JhZGllbnQoZnJvbSAwdHVybiBhdCAwJSAxMDAlLCB0cmFuc3BhcmVudCAke2NvcnJlY3RBbmdsZX1kZWcsICMxMDlEMEQgMGRlZylgfVxyXG4+XHJcbiAgICA8ZGl2XHJcbiAgICAgICAgY2xhc3M9XCJiYXNlXCJcclxuICAgICAgICBjbGFzczppblBvc2l0aW9uPXtoYXNSZWFjaGVkRW5kfVxyXG4gICAgICAgIHN0eWxlPXtgdHJhbnNmb3JtOiByb3RhdGUoJHtjb3JyZWN0RW5kQW5nbGV9ZGVnKWB9XHJcbiAgICAgICAgZGF0YS10ZXN0aWQ9XCJtYXJrZXJfZW5kUG9zaXRpb25cIlxyXG4gICAgPjwvZGl2PlxyXG4gICAgPGRpdlxyXG4gICAgICAgIGNsYXNzPVwiYmFzZVwiXHJcbiAgICAgICAgY2xhc3M6aW5Qb3NpdGlvbj17aGFzUmVhY2hlZFN0YXJ0fVxyXG4gICAgICAgIGRhdGEtdGVzdGlkPVwibWFya2VyX3N0YXJ0UG9zaXRpb25cIlxyXG4gICAgPjwvZGl2PlxyXG48L2Rpdj4gICBcclxuXHJcbjxkaXY+XHJcbiAgICBEb29yIGNvbXBvbmVudCAvIFNvbWVodGluZyBDaGFuZ2VzIFxyXG48L2Rpdj5cclxuXHJcbjxzdHlsZT5cclxuICAgIC5jaXJsY2Uge1xyXG4gICAgICAgIHdpZHRoOiA4MHB4O1xyXG4gICAgICAgIGhlaWdodDogODBweDtcclxuICAgICAgICBib3JkZXItcmFkaXVzOiAwIDEwMCUgMCAwO1xyXG4gICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgICAgICBiYWNrZ3JvdW5kOiBjb25pYy1ncmFkaWVudChmcm9tIDB0dXJuIGF0IDAlIDEwMCUsIHRyYW5zcGFyZW50IDEyZGVnLCAjMTA5RDBEIDBkZWcpO1xyXG4gICAgfVxyXG5cclxuICAgIC5iYXNlIHtcclxuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgbWFyZ2luOiBhdXRvO1xyXG4gICAgICAgIGxlZnQ6IDA7XHJcbiAgICAgICAgYm90dG9tOiAwO1xyXG4gICAgICAgIGJhY2tncm91bmQ6ICM5RjlGOUY7XHJcbiAgICAgICAgd2lkdGg6IDUlO1xyXG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbiAgICAgICAgaGVpZ2h0OiAxMDUlO1xyXG4gICAgICAgIHRyYW5zZm9ybS1vcmlnaW46IGJvdHRvbSBsZWZ0O1xyXG4gICAgICAgIHRyYW5zZm9ybTogcm90YXRlKDkwZGVnKVxyXG4gICAgfVxyXG5cclxuICAgIC5pblBvc2l0aW9uIHtcclxuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjQ0JDRjA2O1xyXG4gICAgICAgIHdpZHRoOiAxMCU7XHJcbiAgICB9XHJcbjwvc3R5bGU+Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQTZFSSxPQUFPLGVBQUMsQ0FBQyxBQUNMLEtBQUssQ0FBRSxJQUFJLENBQ1gsTUFBTSxDQUFFLElBQUksQ0FDWixhQUFhLENBQUUsQ0FBQyxDQUFDLElBQUksQ0FBQyxDQUFDLENBQUMsQ0FBQyxDQUN6QixRQUFRLENBQUUsUUFBUSxDQUNsQixVQUFVLENBQUUsZUFBZSxJQUFJLENBQUMsS0FBSyxDQUFDLEVBQUUsQ0FBQyxFQUFFLENBQUMsSUFBSSxDQUFDLENBQUMsV0FBVyxDQUFDLEtBQUssQ0FBQyxDQUFDLE9BQU8sQ0FBQyxJQUFJLENBQUMsQUFDdEYsQ0FBQyxBQUVELEtBQUssZUFBQyxDQUFDLEFBQ0gsUUFBUSxDQUFFLFFBQVEsQ0FDbEIsTUFBTSxDQUFFLElBQUksQ0FDWixJQUFJLENBQUUsQ0FBQyxDQUNQLE1BQU0sQ0FBRSxDQUFDLENBQ1QsVUFBVSxDQUFFLE9BQU8sQ0FDbkIsS0FBSyxDQUFFLEVBQUUsQ0FDVCxhQUFhLENBQUUsSUFBSSxDQUNuQixNQUFNLENBQUUsSUFBSSxDQUNaLGdCQUFnQixDQUFFLE1BQU0sQ0FBQyxJQUFJLENBQzdCLFNBQVMsQ0FBRSxPQUFPLEtBQUssQ0FBQztJQUM1QixDQUFDLEFBRUQsV0FBVyxlQUFDLENBQUMsQUFDVCxnQkFBZ0IsQ0FBRSxPQUFPLENBQ3pCLEtBQUssQ0FBRSxHQUFHLEFBQ2QsQ0FBQyJ9 */";
     	append_dev(document_1.head, style);
     }
 
@@ -352,17 +352,19 @@
     			t1 = space();
     			div3 = element("div");
     			div3.textContent = "Door component / Somehting Changes";
-    			attr_dev(div0, "class", "base svelte-d0gv3m");
-    			attr_dev(div0, "style", div0_style_value = `transform: rotate(${/*correctEndAngle*/ ctx[0]}deg)`);
-    			toggle_class(div0, "endPosition", /*hasReachedEnd*/ ctx[3]);
-    			add_location(div0, file, 35, 4, 903);
-    			attr_dev(div1, "class", "base svelte-d0gv3m");
-    			toggle_class(div1, "endPosition", /*hasReachedStart*/ ctx[2]);
-    			add_location(div1, file, 36, 4, 1018);
-    			attr_dev(div2, "class", "cirlce svelte-d0gv3m");
-    			attr_dev(div2, "style", div2_style_value = `background: conic-gradient(from 0turn at 0% 100%, transparent ${/*correctAngle*/ ctx[1]}deg, #109D0D 0deg)`);
-    			add_location(div2, file, 31, 0, 759);
-    			add_location(div3, file, 39, 0, 1094);
+    			attr_dev(div0, "class", "base svelte-1ywx79k");
+    			attr_dev(div0, "style", div0_style_value = `transform: rotate(${/*correctEndAngle*/ ctx[2]}deg)`);
+    			attr_dev(div0, "data-testid", "marker_endPosition");
+    			toggle_class(div0, "inPosition", /*hasReachedEnd*/ ctx[1]);
+    			add_location(div0, file, 59, 4, 1546);
+    			attr_dev(div1, "class", "base svelte-1ywx79k");
+    			attr_dev(div1, "data-testid", "marker_startPosition");
+    			toggle_class(div1, "inPosition", /*hasReachedStart*/ ctx[0]);
+    			add_location(div1, file, 65, 4, 1735);
+    			attr_dev(div2, "class", "cirlce svelte-1ywx79k");
+    			attr_dev(div2, "style", div2_style_value = `background: conic-gradient(from 0turn at 0% 100%, transparent ${/*correctAngle*/ ctx[3]}deg, #109D0D 0deg)`);
+    			add_location(div2, file, 55, 0, 1402);
+    			add_location(div3, file, 72, 0, 1877);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -376,19 +378,19 @@
     			insert_dev(target, div3, anchor);
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*correctEndAngle*/ 1 && div0_style_value !== (div0_style_value = `transform: rotate(${/*correctEndAngle*/ ctx[0]}deg)`)) {
+    			if (dirty & /*correctEndAngle*/ 4 && div0_style_value !== (div0_style_value = `transform: rotate(${/*correctEndAngle*/ ctx[2]}deg)`)) {
     				attr_dev(div0, "style", div0_style_value);
     			}
 
-    			if (dirty & /*hasReachedEnd*/ 8) {
-    				toggle_class(div0, "endPosition", /*hasReachedEnd*/ ctx[3]);
+    			if (dirty & /*hasReachedEnd*/ 2) {
+    				toggle_class(div0, "inPosition", /*hasReachedEnd*/ ctx[1]);
     			}
 
-    			if (dirty & /*hasReachedStart*/ 4) {
-    				toggle_class(div1, "endPosition", /*hasReachedStart*/ ctx[2]);
+    			if (dirty & /*hasReachedStart*/ 1) {
+    				toggle_class(div1, "inPosition", /*hasReachedStart*/ ctx[0]);
     			}
 
-    			if (dirty & /*correctAngle*/ 2 && div2_style_value !== (div2_style_value = `background: conic-gradient(from 0turn at 0% 100%, transparent ${/*correctAngle*/ ctx[1]}deg, #109D0D 0deg)`)) {
+    			if (dirty & /*correctAngle*/ 8 && div2_style_value !== (div2_style_value = `background: conic-gradient(from 0turn at 0% 100%, transparent ${/*correctAngle*/ ctx[3]}deg, #109D0D 0deg)`)) {
     				attr_dev(div2, "style", div2_style_value);
     			}
     		},
@@ -412,14 +414,26 @@
     	return block;
     }
 
+    function limitAngle(angleValue) {
+    	let limitedValue = angleValue;
+
+    	if (limitedValue > 90) {
+    		limitedValue = 90;
+    	} else if (limitedValue < 0) {
+    		limitedValue = 0;
+    	}
+
+    	return limitedValue;
+    }
+
     function instance($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Door", slots, []);
     	let { valueChangeEvent } = $$props;
-    	let { endAngle = 80 } = $$props;
     	let hasReachedStart = false;
     	let hasReachedEnd = false;
-    	let angle = 30;
+    	let endAngle = 90;
+    	let openAngle = 30;
 
     	onMount(() => {
     		console.log("Subscribe on event:", valueChangeEvent);
@@ -432,14 +446,24 @@
 
     	function eventHandler(event) {
     		const { key, value } = event.detail;
-    		console.log("event", key, value);
 
-    		if (key === "open_angle") {
-    			$$invalidate(6, angle = value);
+    		switch (key) {
+    			case "open_angle":
+    				$$invalidate(6, openAngle = limitAngle(value));
+    				break;
+    			case "end_angle":
+    				$$invalidate(5, endAngle = limitAngle(value));
+    				break;
+    			case "end_position":
+    				$$invalidate(1, hasReachedEnd = value);
+    				break;
+    			case "start_position":
+    				$$invalidate(0, hasReachedStart = value);
+    				break;
     		}
     	}
 
-    	const writable_props = ["valueChangeEvent", "endAngle"];
+    	const writable_props = ["valueChangeEvent"];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1.warn(`<Door> was created with unknown prop '${key}'`);
@@ -447,30 +471,30 @@
 
     	$$self.$$set = $$props => {
     		if ("valueChangeEvent" in $$props) $$invalidate(4, valueChangeEvent = $$props.valueChangeEvent);
-    		if ("endAngle" in $$props) $$invalidate(5, endAngle = $$props.endAngle);
     	};
 
     	$$self.$capture_state = () => ({
     		onDestroy,
     		onMount,
     		valueChangeEvent,
-    		endAngle,
     		hasReachedStart,
     		hasReachedEnd,
-    		angle,
+    		endAngle,
+    		openAngle,
     		eventHandler,
+    		limitAngle,
     		correctEndAngle,
     		correctAngle
     	});
 
     	$$self.$inject_state = $$props => {
     		if ("valueChangeEvent" in $$props) $$invalidate(4, valueChangeEvent = $$props.valueChangeEvent);
+    		if ("hasReachedStart" in $$props) $$invalidate(0, hasReachedStart = $$props.hasReachedStart);
+    		if ("hasReachedEnd" in $$props) $$invalidate(1, hasReachedEnd = $$props.hasReachedEnd);
     		if ("endAngle" in $$props) $$invalidate(5, endAngle = $$props.endAngle);
-    		if ("hasReachedStart" in $$props) $$invalidate(2, hasReachedStart = $$props.hasReachedStart);
-    		if ("hasReachedEnd" in $$props) $$invalidate(3, hasReachedEnd = $$props.hasReachedEnd);
-    		if ("angle" in $$props) $$invalidate(6, angle = $$props.angle);
-    		if ("correctEndAngle" in $$props) $$invalidate(0, correctEndAngle = $$props.correctEndAngle);
-    		if ("correctAngle" in $$props) $$invalidate(1, correctAngle = $$props.correctAngle);
+    		if ("openAngle" in $$props) $$invalidate(6, openAngle = $$props.openAngle);
+    		if ("correctEndAngle" in $$props) $$invalidate(2, correctEndAngle = $$props.correctEndAngle);
+    		if ("correctAngle" in $$props) $$invalidate(3, correctAngle = $$props.correctAngle);
     	};
 
     	let correctEndAngle;
@@ -482,29 +506,28 @@
 
     	$$self.$$.update = () => {
     		if ($$self.$$.dirty & /*endAngle*/ 32) {
-    			 $$invalidate(0, correctEndAngle = 90 - endAngle);
+    			 $$invalidate(2, correctEndAngle = 90 - endAngle);
     		}
 
-    		if ($$self.$$.dirty & /*angle*/ 64) {
-    			 $$invalidate(1, correctAngle = 90 - angle);
+    		if ($$self.$$.dirty & /*openAngle*/ 64) {
+    			 $$invalidate(3, correctAngle = 90 - openAngle);
     		}
     	};
 
     	return [
-    		correctEndAngle,
-    		correctAngle,
     		hasReachedStart,
     		hasReachedEnd,
-    		valueChangeEvent,
-    		endAngle
+    		correctEndAngle,
+    		correctAngle,
+    		valueChangeEvent
     	];
     }
 
     class Door extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		if (!document_1.getElementById("svelte-d0gv3m-style")) add_css();
-    		init(this, options, instance, create_fragment, safe_not_equal, { valueChangeEvent: 4, endAngle: 5 });
+    		if (!document_1.getElementById("svelte-1ywx79k-style")) add_css();
+    		init(this, options, instance, create_fragment, safe_not_equal, { valueChangeEvent: 4 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -526,14 +549,6 @@
     	}
 
     	set valueChangeEvent(value) {
-    		throw new Error("<Door>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	get endAngle() {
-    		throw new Error("<Door>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set endAngle(value) {
     		throw new Error("<Door>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }

@@ -1,14 +1,15 @@
 <script>
     import { onDestroy, onMount } from "svelte"
     export let valueChangeEvent
-    export let endAngle = 80
-    $: correctEndAngle = 90 - endAngle
-
+    
     let hasReachedStart = false
     let hasReachedEnd = false
 
-    let angle = 30
-    $: correctAngle = 90 - angle
+    let endAngle = 90
+    $: correctEndAngle = 90 - endAngle
+
+    let openAngle = 30
+    $: correctAngle = 90 - openAngle
 
     onMount(() => {
         console.log("Subscribe on event:", valueChangeEvent)
@@ -21,10 +22,33 @@
 
     function eventHandler(event) {
         const {key, value} = event.detail
-        console.log("event", key, value)
-        if(key === "open_angle") {
-            angle = value
+        
+        switch(key) {
+            case "open_angle": 
+                openAngle = limitAngle(value)
+                break 
+            case "end_angle": 
+                endAngle = limitAngle(value)
+                break
+            case "end_position": 
+                hasReachedEnd = value
+                break
+            case "start_position": 
+                hasReachedStart = value
+                break
+            default:
+                break
         }
+    }
+
+    function limitAngle(angleValue) {
+        let limitedValue = angleValue
+        if(limitedValue > 90) {
+            limitedValue = 90
+        } else if(limitedValue < 0) {
+            limitedValue = 0
+        }
+        return limitedValue
     }
 
 </script>
@@ -33,8 +57,17 @@
     class="cirlce"
     style={`background: conic-gradient(from 0turn at 0% 100%, transparent ${correctAngle}deg, #109D0D 0deg)`}
 >
-    <div class="base" class:endPosition={hasReachedEnd} style={`transform: rotate(${correctEndAngle}deg)`}></div>
-    <div class="base" class:endPosition={hasReachedStart} ></div>
+    <div
+        class="base"
+        class:inPosition={hasReachedEnd}
+        style={`transform: rotate(${correctEndAngle}deg)`}
+        data-testid="marker_endPosition"
+    ></div>
+    <div
+        class="base"
+        class:inPosition={hasReachedStart}
+        data-testid="marker_startPosition"
+    ></div>
 </div>   
 
 <div>
@@ -63,7 +96,7 @@
         transform: rotate(90deg)
     }
 
-    .endPosition {
+    .inPosition {
         background-color: #CBCF06;
         width: 10%;
     }
