@@ -81,6 +81,10 @@
     {
       "name": "JociAdvancedComponentControl",
       "basePath": "/JociAdvancedComponentControl"
+    },
+    {
+      "name": "Ajto",
+      "basePath": "/Ajto"
     }
   ],
   "keyboardLayouts": [

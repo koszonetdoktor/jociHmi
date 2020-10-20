@@ -2690,6 +2690,7 @@
     "VIDEOSEGMENTSIZE": 1048576,
     "VIRTUALDIRECTORIES": {
         "/": "C:\\Users\\gergohalmi\\source\\repos\\Experimenting\\Experimenting",
+        "/Ajto": "C:\\Users\\gergohalmi\\source\\repos\\Experimenting\\Ajto",
         "/Beckhoff.TwinCAT.HMI.Controls": "C:\\Users\\gergohalmi\\source\\repos\\Experimenting\\Packages\\Beckhoff.TwinCAT.HMI.Controls.12.742.4\\runtimes\\native1.12-tchmi",
         "/Beckhoff.TwinCAT.HMI.Functions": "C:\\Users\\gergohalmi\\source\\repos\\Experimenting\\Packages\\Beckhoff.TwinCAT.HMI.Functions.12.742.4\\runtimes\\native1.12-tchmi",
         "/JociAdvancedComponentControl": "C:\\Users\\gergohalmi\\source\\repos\\Experimenting\\JociAdvancedComponentControl",

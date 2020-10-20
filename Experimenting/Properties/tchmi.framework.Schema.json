@@ -2329,6 +2329,12 @@
       ],
       "default": "Visible"
     },
+    "TcHmi.Controls.Ajto.AjtoControl": {
+      "type": "object",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkControlType": "AjtoControl",
+      "frameworkControlNamespace": "TcHmi.Controls.Ajto"
+    },
     "TcHmi.Controls.Beckhoff.TcHmiButton": {
       "$schema": "http://json-schema.org/draft-04/schema",
       "type": "object",
