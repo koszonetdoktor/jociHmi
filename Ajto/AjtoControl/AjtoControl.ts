@@ -5,8 +5,8 @@
 module TcHmi {
     export module Controls {
         export module Ajto {
-            export class AjtoControl extends TcHmi.Controls.System.TcHmiControl {
-
+            export class AjtoControl extends TcHmi.Controls.System
+                .TcHmiControl {
                 /*
                 Attribute philosophy
                 --------------------
@@ -23,40 +23,67 @@ module TcHmi {
                  * @param {TcHmi.Controls.ControlAttributeList} attrs Attributes defined in HTML in a special format (internal, do not use)
                  * @returns {void}
                  */
-                constructor(element: JQuery, pcElement: JQuery, attrs: TcHmi.Controls.ControlAttributeList) {
+                constructor(
+                    element: JQuery,
+                    pcElement: JQuery,
+                    attrs: TcHmi.Controls.ControlAttributeList
+                ) {
                     /** Call base class constructor */
-                    super(element, pcElement, attrs);
+                    super(element, pcElement, attrs)
                 }
 
-                protected __elementTemplateRoot!: JQuery;
+                protected __elementTemplateRoot!: JQuery
 
-				/**
-                  * If raised, the control object exists in control cache and constructor of each inheritation level was called.
-                  * Call attribute processor functions here to initialize default values!
-                  */
+                protected __openAngle: number
+                protected __endAngle: number
+                protected __endPosition: boolean
+                protected __startPosition: boolean
+
+                public setSzog() {}
+
+                public getSzog() {}
+
+                public setNyitasiSzog() {}
+
+                public getNyitasiSzog() {}
+
+                public setNyitottVegallas() {}
+
+                public getNyitottVegallas() {}
+
+                public setZartVegallas() {}
+
+                public getZartVegallas() {}
+
+                /**
+                 * If raised, the control object exists in control cache and constructor of each inheritation level was called.
+                 * Call attribute processor functions here to initialize default values!
+                 */
                 public __previnit() {
                     // Fetch template root element
-                    this.__elementTemplateRoot = this.__element.find('.TcHmi_Controls_Ajto_AjtoControl-Template');
+                    this.__elementTemplateRoot = this.__element.find(
+                        ".TcHmi_Controls_Ajto_AjtoControl-Template"
+                    )
                     if (this.__elementTemplateRoot.length === 0) {
-                        throw new Error('Invalid Template.html');
+                        throw new Error("Invalid Template.html")
                     }
                     // Call __previnit of base class
-                    super.__previnit();
+                    super.__previnit()
                 }
-                /** 
-                 * @description Is called during control initialize phase after attribute setter have been called based on it's default or initial html dom values. 
+                /**
+                 * @description Is called during control initialize phase after attribute setter have been called based on it's default or initial html dom values.
                  * @returns {void}
                  */
                 public __init() {
-                    super.__init();
+                    super.__init()
                 }
 
                 /**
-                * @description Is called by tachcontrol() after the control instance gets part of the current DOM.
-                * Is only allowed to be called from the framework itself!
-                */
+                 * @description Is called by tachcontrol() after the control instance gets part of the current DOM.
+                 * Is only allowed to be called from the framework itself!
+                 */
                 public __attach() {
-                    super.__attach();
+                    super.__attach()
 
                     /**
                      * Initialize everything which is only available while the control is part of the active dom.
@@ -64,11 +91,11 @@ module TcHmi {
                 }
 
                 /**
-                * @description Is called by tachcontrol() after the control instance is no longer part of the current DOM.
-                * Is only allowed to be called from the framework itself!
-                */
+                 * @description Is called by tachcontrol() after the control instance is no longer part of the current DOM.
+                 * Is only allowed to be called from the framework itself!
+                 */
                 public __detach() {
-                    super.__detach();
+                    super.__detach()
 
                     /**
                      * Disable everything which is not needed while the control is not part of the active dom.
@@ -77,26 +104,26 @@ module TcHmi {
                 }
 
                 /**
-                * @description Destroy the current control instance. 
-                * Will be called automatically if system destroys control!
-                */
+                 * @description Destroy the current control instance.
+                 * Will be called automatically if system destroys control!
+                 */
                 public destroy() {
                     /**
-                    * While __keepAlive is set to true control must not be destroyed.
-                    */
+                     * While __keepAlive is set to true control must not be destroyed.
+                     */
                     if (this.__keepAlive) {
-                        return;
+                        return
                     }
 
-                    super.destroy();
+                    super.destroy()
 
                     /**
-                    * Free resources like child controls etc.
-                    */
+                     * Free resources like child controls etc.
+                     */
                 }
             }
         }
 
-        registerEx('AjtoControl', 'TcHmi.Controls.Ajto', Ajto.AjtoControl);
+        registerEx("AjtoControl", "TcHmi.Controls.Ajto", Ajto.AjtoControl)
     }
 }

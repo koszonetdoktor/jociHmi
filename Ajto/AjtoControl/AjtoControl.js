@@ -8,7 +8,8 @@ var TcHmi;
     (function (Controls) {
         let Ajto;
         (function (Ajto) {
-            class AjtoControl extends TcHmi.Controls.System.TcHmiControl {
+            class AjtoControl extends TcHmi.Controls.System
+                .TcHmiControl {
                 /*
                 Attribute philosophy
                 --------------------
@@ -28,15 +29,23 @@ var TcHmi;
                     /** Call base class constructor */
                     super(element, pcElement, attrs);
                 }
+                setSzog() { }
+                getSzog() { }
+                setNyitasiSzog() { }
+                getNyitasiSzog() { }
+                setNyitottVegallas() { }
+                getNyitottVegallas() { }
+                setZartVegallas() { }
+                getZartVegallas() { }
                 /**
-                  * If raised, the control object exists in control cache and constructor of each inheritation level was called.
-                  * Call attribute processor functions here to initialize default values!
-                  */
+                 * If raised, the control object exists in control cache and constructor of each inheritation level was called.
+                 * Call attribute processor functions here to initialize default values!
+                 */
                 __previnit() {
                     // Fetch template root element
-                    this.__elementTemplateRoot = this.__element.find('.TcHmi_Controls_Ajto_AjtoControl-Template');
+                    this.__elementTemplateRoot = this.__element.find(".TcHmi_Controls_Ajto_AjtoControl-Template");
                     if (this.__elementTemplateRoot.length === 0) {
-                        throw new Error('Invalid Template.html');
+                        throw new Error("Invalid Template.html");
                     }
                     // Call __previnit of base class
                     super.__previnit();
@@ -49,9 +58,9 @@ var TcHmi;
                     super.__init();
                 }
                 /**
-                * @description Is called by tachcontrol() after the control instance gets part of the current DOM.
-                * Is only allowed to be called from the framework itself!
-                */
+                 * @description Is called by tachcontrol() after the control instance gets part of the current DOM.
+                 * Is only allowed to be called from the framework itself!
+                 */
                 __attach() {
                     super.__attach();
                     /**
@@ -59,9 +68,9 @@ var TcHmi;
                      */
                 }
                 /**
-                * @description Is called by tachcontrol() after the control instance is no longer part of the current DOM.
-                * Is only allowed to be called from the framework itself!
-                */
+                 * @description Is called by tachcontrol() after the control instance is no longer part of the current DOM.
+                 * Is only allowed to be called from the framework itself!
+                 */
                 __detach() {
                     super.__detach();
                     /**
@@ -70,25 +79,25 @@ var TcHmi;
                      */
                 }
                 /**
-                * @description Destroy the current control instance.
-                * Will be called automatically if system destroys control!
-                */
+                 * @description Destroy the current control instance.
+                 * Will be called automatically if system destroys control!
+                 */
                 destroy() {
                     /**
-                    * While __keepAlive is set to true control must not be destroyed.
-                    */
+                     * While __keepAlive is set to true control must not be destroyed.
+                     */
                     if (this.__keepAlive) {
                         return;
                     }
                     super.destroy();
                     /**
-                    * Free resources like child controls etc.
-                    */
+                     * Free resources like child controls etc.
+                     */
                 }
             }
             Ajto.AjtoControl = AjtoControl;
         })(Ajto = Controls.Ajto || (Controls.Ajto = {}));
-        Controls.registerEx('AjtoControl', 'TcHmi.Controls.Ajto', Ajto.AjtoControl);
+        Controls.registerEx("AjtoControl", "TcHmi.Controls.Ajto", Ajto.AjtoControl);
     })(Controls = TcHmi.Controls || (TcHmi.Controls = {}));
 })(TcHmi || (TcHmi = {}));
 //# sourceMappingURL=AjtoControl.js.map
