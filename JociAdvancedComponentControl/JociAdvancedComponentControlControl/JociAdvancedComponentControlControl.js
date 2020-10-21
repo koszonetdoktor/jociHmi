@@ -8,7 +8,8 @@ var TcHmi;
     (function (Controls) {
         let JociAdvancedComponentControl;
         (function (JociAdvancedComponentControl) {
-            class JociAdvancedComponentControlControl extends TcHmi.Controls.System.TcHmiControl {
+            class JociAdvancedComponentControlControl extends TcHmi
+                .Controls.System.TcHmiControl {
                 /*
                 Attribute philosophy
                 --------------------
@@ -31,24 +32,26 @@ var TcHmi;
                 setAngle(angle) {
                     const angleValue = TcHmi.ValueConverter.toNumber(angle);
                     this.__angle = angleValue !== null && angleValue !== void 0 ? angleValue : 0;
-                    TcHmi.EventProvider.raise(this.__id + '.onPropertyChanged', { propertyName: 'Angle' });
+                    TcHmi.EventProvider.raise(this.__id + ".onPropertyChanged", { propertyName: "Angle" });
                     this.processNewAngleValue();
                 }
                 getAngle() {
                     return this.__angle;
                 }
                 processNewAngleValue() {
-                    document.dispatchEvent(new CustomEvent(`${this.__id}_angleChange`, { detail: { value: this.__angle } }));
+                    document.dispatchEvent(new CustomEvent(`${this.__id}_angleChange`, {
+                        detail: { value: this.__angle },
+                    }));
                 }
                 /**
-                  * If raised, the control object exists in control cache and constructor of each inheritation level was called.
-                  * Call attribute processor functions here to initialize default values!
-                  */
+                 * If raised, the control object exists in control cache and constructor of each inheritation level was called.
+                 * Call attribute processor functions here to initialize default values!
+                 */
                 __previnit() {
                     // Fetch template root element
-                    this.__elementTemplateRoot = this.__element.find('.TcHmi_Controls_JociAdvancedComponentControl_JociAdvancedComponentControlControl-Template');
+                    this.__elementTemplateRoot = this.__element.find(".TcHmi_Controls_JociAdvancedComponentControl_JociAdvancedComponentControlControl-Template");
                     if (this.__elementTemplateRoot.length === 0) {
-                        throw new Error('Invalid Template.html');
+                        throw new Error("Invalid Template.html");
                     }
                     // Call __previnit of base class
                     super.__previnit();
@@ -61,9 +64,9 @@ var TcHmi;
                     super.__init();
                 }
                 /**
-                * @description Is called by tachcontrol() after the control instance gets part of the current DOM.
-                * Is only allowed to be called from the framework itself!
-                */
+                 * @description Is called by tachcontrol() after the control instance gets part of the current DOM.
+                 * Is only allowed to be called from the framework itself!
+                 */
                 __attach() {
                     super.__attach();
                     console.log("Attacging");
@@ -73,17 +76,17 @@ var TcHmi;
                     new window.OldDoorComponent({
                         target: buttonContainer,
                         props: {
-                            eventName: `${this.__id}_angleChange`
-                        }
+                            eventName: `${this.__id}_angleChange`,
+                        },
                     });
                     /**
                      * Initialize everything which is only available while the control is part of the active dom.
                      */
                 }
                 /**
-                * @description Is called by tachcontrol() after the control instance is no longer part of the current DOM.
-                * Is only allowed to be called from the framework itself!
-                */
+                 * @description Is called by tachcontrol() after the control instance is no longer part of the current DOM.
+                 * Is only allowed to be called from the framework itself!
+                 */
                 __detach() {
                     super.__detach();
                     /**
@@ -92,25 +95,25 @@ var TcHmi;
                      */
                 }
                 /**
-                * @description Destroy the current control instance.
-                * Will be called automatically if system destroys control!
-                */
+                 * @description Destroy the current control instance.
+                 * Will be called automatically if system destroys control!
+                 */
                 destroy() {
                     /**
-                    * While __keepAlive is set to true control must not be destroyed.
-                    */
+                     * While __keepAlive is set to true control must not be destroyed.
+                     */
                     if (this.__keepAlive) {
                         return;
                     }
                     super.destroy();
                     /**
-                    * Free resources like child controls etc.
-                    */
+                     * Free resources like child controls etc.
+                     */
                 }
             }
             JociAdvancedComponentControl.JociAdvancedComponentControlControl = JociAdvancedComponentControlControl;
         })(JociAdvancedComponentControl = Controls.JociAdvancedComponentControl || (Controls.JociAdvancedComponentControl = {}));
-        Controls.registerEx('JociAdvancedComponentControlControl', 'TcHmi.Controls.JociAdvancedComponentControl', JociAdvancedComponentControl.JociAdvancedComponentControlControl);
+        Controls.registerEx("JociAdvancedComponentControlControl", "TcHmi.Controls.JociAdvancedComponentControl", JociAdvancedComponentControl.JociAdvancedComponentControlControl);
     })(Controls = TcHmi.Controls || (TcHmi.Controls = {}));
 })(TcHmi || (TcHmi = {}));
 //# sourceMappingURL=JociAdvancedComponentControlControl.js.map

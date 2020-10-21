@@ -16,14 +16,15 @@ declare module TcHmi {
                 protected __endAngle: number;
                 protected __endPosition: boolean;
                 protected __startPosition: boolean;
-                setSzog(): void;
-                getSzog(): void;
-                setNyitasiSzog(): void;
-                getNyitasiSzog(): void;
-                setNyitottVegallas(): void;
-                getNyitottVegallas(): void;
-                setZartVegallas(): void;
-                getZartVegallas(): void;
+                setSzog(angle: number | null): void;
+                getSzog(): number;
+                setNyitasiSzog(angle: number | null): void;
+                getNyitasiSzog(): number;
+                setNyitottVegallas(isInPosition: boolean | null): void;
+                getNyitottVegallas(): boolean;
+                setZartVegallas(isInPosition: boolean | null): void;
+                getZartVegallas(): boolean;
+                fireChangeEvent(key: string, value: number | boolean): void;
                 /**
                  * If raised, the control object exists in control cache and constructor of each inheritation level was called.
                  * Call attribute processor functions here to initialize default values!

@@ -39,21 +39,73 @@ module TcHmi {
                 protected __endPosition: boolean
                 protected __startPosition: boolean
 
-                public setSzog() {}
+                public setSzog(angle: number | null) {
+                    const angleValue = TcHmi.ValueConverter.toNumber(angle)
+                    this.__openAngle = angleValue ?? 0
+                    TcHmi.EventProvider.raise(
+                        this.__id + ".onPropertyChanged",
+                        { propertyName: "Szog" }
+                    )
+                    this.fireChangeEvent("open_angle", this.__openAngle)
+                }
 
-                public getSzog() {}
+                public getSzog() {
+                    return this.__openAngle
+                }
 
-                public setNyitasiSzog() {}
+                public setNyitasiSzog(angle: number | null) {
+                    const angleValue = TcHmi.ValueConverter.toNumber(angle)
+                    this.__endAngle = angleValue ?? 0
+                    TcHmi.EventProvider.raise(
+                        this.__id + ".onPropertyChanged",
+                        { propertyName: "NyitasiSzog" }
+                    )
+                    this.fireChangeEvent("end_angle", this.__endAngle)
+                }
 
-                public getNyitasiSzog() {}
+                public getNyitasiSzog() {
+                    return this.__endAngle
+                }
 
-                public setNyitottVegallas() {}
+                public setNyitottVegallas(isInPosition: boolean | null) {
+                    console.log("positon", isInPosition)
+                    this.__endPosition =
+                        TcHmi.ValueConverter.toBoolean(isInPosition) ?? false
+                    TcHmi.EventProvider.raise(
+                        this.__id + ".onPropertyChanged",
+                        { propertyName: "NyitottVegallas" }
+                    )
+                    this.fireChangeEvent("end_position", this.__endPosition)
+                }
 
-                public getNyitottVegallas() {}
+                public getNyitottVegallas() {
+                    return this.__endPosition
+                }
 
-                public setZartVegallas() {}
+                public setZartVegallas(isInPosition: boolean | null) {
+                    this.__startPosition =
+                        TcHmi.ValueConverter.toBoolean(isInPosition) ?? false
+                    TcHmi.EventProvider.raise(
+                        this.__id + ".onPropertyChanged",
+                        { propertyName: "ZartVegallas" }
+                    )
+                    this.fireChangeEvent("start_position", this.__startPosition)
+                }
 
-                public getZartVegallas() {}
+                public getZartVegallas() {
+                    return this.__startPosition
+                }
+
+                public fireChangeEvent(key: string, value: number | boolean) {
+                    document.dispatchEvent(
+                        new CustomEvent(`${this.__id}_change`, {
+                            detail: {
+                                key,
+                                value,
+                            },
+                        })
+                    )
+                }
 
                 /**
                  * If raised, the control object exists in control cache and constructor of each inheritation level was called.
@@ -84,6 +136,18 @@ module TcHmi {
                  */
                 public __attach() {
                     super.__attach()
+
+                    const elementContainer = this.__elementTemplateRoot.find(
+                        ".root"
+                    )[0]
+
+                    //@ts-ignore
+                    new window.DoorComponent({
+                        target: elementContainer,
+                        props: {
+                            valueChangeEvent: `${this.__id}_change`,
+                        },
+                    })
 
                     /**
                      * Initialize everything which is only available while the control is part of the active dom.

@@ -29,14 +29,51 @@ var TcHmi;
                     /** Call base class constructor */
                     super(element, pcElement, attrs);
                 }
-                setSzog() { }
-                getSzog() { }
-                setNyitasiSzog() { }
-                getNyitasiSzog() { }
-                setNyitottVegallas() { }
-                getNyitottVegallas() { }
-                setZartVegallas() { }
-                getZartVegallas() { }
+                setSzog(angle) {
+                    const angleValue = TcHmi.ValueConverter.toNumber(angle);
+                    this.__openAngle = angleValue !== null && angleValue !== void 0 ? angleValue : 0;
+                    TcHmi.EventProvider.raise(this.__id + ".onPropertyChanged", { propertyName: "Szog" });
+                    this.fireChangeEvent("open_angle", this.__openAngle);
+                }
+                getSzog() {
+                    return this.__openAngle;
+                }
+                setNyitasiSzog(angle) {
+                    const angleValue = TcHmi.ValueConverter.toNumber(angle);
+                    this.__endAngle = angleValue !== null && angleValue !== void 0 ? angleValue : 0;
+                    TcHmi.EventProvider.raise(this.__id + ".onPropertyChanged", { propertyName: "NyitasiSzog" });
+                    this.fireChangeEvent("end_angle", this.__endAngle);
+                }
+                getNyitasiSzog() {
+                    return this.__endAngle;
+                }
+                setNyitottVegallas(isInPosition) {
+                    var _a;
+                    console.log("positon", isInPosition);
+                    this.__endPosition = (_a = TcHmi.ValueConverter.toBoolean(isInPosition)) !== null && _a !== void 0 ? _a : false;
+                    TcHmi.EventProvider.raise(this.__id + ".onPropertyChanged", { propertyName: "NyitottVegallas" });
+                    this.fireChangeEvent("end_position", this.__endPosition);
+                }
+                getNyitottVegallas() {
+                    return this.__endPosition;
+                }
+                setZartVegallas(isInPosition) {
+                    var _a;
+                    this.__startPosition = (_a = TcHmi.ValueConverter.toBoolean(isInPosition)) !== null && _a !== void 0 ? _a : false;
+                    TcHmi.EventProvider.raise(this.__id + ".onPropertyChanged", { propertyName: "ZartVegallas" });
+                    this.fireChangeEvent("start_position", this.__startPosition);
+                }
+                getZartVegallas() {
+                    return this.__startPosition;
+                }
+                fireChangeEvent(key, value) {
+                    document.dispatchEvent(new CustomEvent(`${this.__id}_change`, {
+                        detail: {
+                            key,
+                            value,
+                        },
+                    }));
+                }
                 /**
                  * If raised, the control object exists in control cache and constructor of each inheritation level was called.
                  * Call attribute processor functions here to initialize default values!
@@ -63,6 +100,14 @@ var TcHmi;
                  */
                 __attach() {
                     super.__attach();
+                    const elementContainer = this.__elementTemplateRoot.find(".root")[0];
+                    //@ts-ignore
+                    new window.DoorComponent({
+                        target: elementContainer,
+                        props: {
+                            valueChangeEvent: `${this.__id}_change`,
+                        },
+                    });
                     /**
                      * Initialize everything which is only available while the control is part of the active dom.
                      */

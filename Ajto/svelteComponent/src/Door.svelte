@@ -22,7 +22,7 @@
 
     function eventHandler(event) {
         const {key, value} = event.detail
-        
+        console.log("EVENT", key, value)
         switch(key) {
             case "open_angle": 
                 openAngle = limitAngle(value)
@@ -69,10 +69,6 @@
         data-testid="marker_startPosition"
     ></div>
 </div>   
-
-<div>
-    Door component / Somehting Changes 
-</div>
 
 <style>
     .cirlce {
