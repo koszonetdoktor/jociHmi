@@ -1,0 +1,150 @@
+﻿{
+    "$schema": "../.hmiframework/Schema/ControlDescription.Schema.json",
+    "apiVersion": 1,
+    "name": "AjtoControl",
+    "namespace": "TcHmi.Controls.Ajto",
+    "displayName": "AjtoControl",
+    "version": {
+        "full": "1.0.0.0",
+        "major": 1,
+        "minor": 0,
+        "revision": 0,
+        "build": 0
+    },
+    "visible": true,
+    "themeable": "Standard",
+    "base": "TcHmi.Controls.System.TcHmiControl",
+    "description": "This description text will be used as a Tooltip in Visual Studio.",
+    "properties": {
+        "containerControl": false,
+        "geometry": {
+            "width": 80,
+            "height": 80
+        }
+    },
+    "template": "Template.html",
+    "icons": [
+        {
+            "name": "Icons/16x16.png",
+            "width": 16,
+            "height": 16
+        },
+        {
+            "name": "Icons/24x24.png",
+            "width": 24,
+            "height": 24
+        },
+        {
+            "name": "Icons/32x32.png",
+            "width": 32,
+            "height": 32
+        },
+        {
+            "name": "Icons/64x64.png",
+            "width": 64,
+            "height": 64
+        }
+    ],
+    "dependencyFiles": [
+        {
+            "name": "AjtoControl.js",
+            "type": "JavaScript",
+            "description": "Contains all the main logic."
+        },
+        {
+            "name": "Style.css",
+            "type": "Stylesheet",
+            "description": "Theme independent style"
+        },
+        {
+            "name": "componentSrc.js",
+            "type": "JavaScript",
+            "description": "custom componnt build from Svelte"
+        }
+    ],
+    "themes": {
+        "Base": {
+            "resources": [
+                {
+                    "name": "Themes/Base/Style.css",
+                    "type": "Stylesheet",
+                    "description": "Theme dependent style"
+                }
+            ]
+        }
+    },
+    "attributes": [
+        {
+            "name": "data-tchmi-szog",
+            "displayName": "Szog",
+            "propertyName": "Szog",
+            "propertySetterName": "setSzog",
+            "propertyGetterName": "getSzog",
+            "visible": true,
+            "type": "tchmi:general#/definitions/REAL",
+            "category": "Custom",
+            "description": "Ajto aktualis nyitasi szoge",
+            "bindable": true,
+            "heritable": true,
+            "allowSymbolExpressionsInObject": true,
+            "defaultValue": null,
+            "defaultValueInternal": 0
+        },
+        {
+            "name": "data-tchmi-nyitasiszog",
+            "displayName": "NyitasiSzog",
+            "propertyName": "NyitasiSzog",
+            "propertySetterName": "setNyitasiSzog",
+            "propertyGetterName": "getNyitasiSzog",
+            "visible": true,
+            "type": "tchmi:general#/definitions/REAL",
+            "category": "Custom",
+            "description": "Ez a szurke hogy mennyire nyisson ki",
+            "bindable": true,
+            "heritable": true,
+            "allowSymbolExpressionsInObject": true,
+            "defaultValue": null,
+            "defaultValueInternal": 0
+        },
+        {
+            "name": "data-tchmi-nyitottvegallas",
+            "displayName": "NyitottVegallas",
+            "propertyName": "NyitottVegallas",
+            "propertySetterName": "setNyitottVegallas",
+            "propertyGetterName": "getNyitottVegallas",
+            "visible": true,
+            "type": "tchmi:general#/definitions/BOOL",
+            "category": "Custom",
+            "description": "Sarga jel vegallaskor",
+            "bindable": true,
+            "heritable": true,
+            "allowSymbolExpressionsInObject": true,
+            "defaultValue": null,
+            "defaultValueInternal": false
+        },
+        {
+            "name": "data-tchmi-zarttvegallas",
+            "displayName": "ZartVegallas",
+            "propertyName": "ZartVegallas",
+            "propertySetterName": "setZartVegallas",
+            "propertyGetterName": "getZartVegallas",
+            "visible": true,
+            "type": "tchmi:general#/definitions/BOOL",
+            "category": "Custom",
+            "description": "Sarga jel vegallasko",
+            "bindable": true,
+            "heritable": true,
+            "allowSymbolExpressionsInObject": true,
+            "defaultValue": null,
+            "defaultValueInternal": false
+        }
+    ],
+    "attributeCategories": [],
+    "functions": [],
+    "events": [],
+    "dataTypes": [
+        {
+            "schema": "Schema/Types.Schema.json"
+        }
+    ]
+}

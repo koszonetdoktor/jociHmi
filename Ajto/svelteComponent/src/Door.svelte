@@ -72,8 +72,8 @@
 
 <style>
     .cirlce {
-        width: 80px;
-        height: 80px;
+        width: 75px;
+        height: 75px;
         border-radius: 0 100% 0 0;
         position: relative;
         background: conic-gradient(from 0turn at 0% 100%, transparent 12deg, #109D0D 0deg);
