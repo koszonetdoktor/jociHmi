@@ -1,12 +1,16 @@
-## How to add new Svelte component
-1. Create the Svelte project
-2. Add the following to the project's `hmiextproj` file in the `ItemGroup` section
+## Hogy adj hozzá új Svelte komponenst
+
+1. Csinaj új Svelte projektet
+2. Add hozzá a következőt a VS projekt `hmiextproj` fajljához az `ItemGroup` szekcióban
+
 ```html
-<Content Include="JociAdvancedComponentControlControl\componentSrc.js">
+<content Include="JociAdvancedComponentControlControl\componentSrc.js">
     <SubType>Content</SubType>
-</Content>
+</content>
 ```
-3. Add the following in the `Description.json` `dependencyFiles` property: 
+
+3. Add hozzá a következőt a `Description.json` `dependencyFiles` propertyhez:
+
 ```json
 {
     "name": "componentSrc.js",
@@ -14,13 +18,15 @@
     "description": "custom componnt build from Svelte"
 }
 ```
-4. Now the component can be created in the main ts file of the control. For example: 
+
+4. Mostmár megcsinálhatod a komponenst a FrameworkControl main TypeScript fájlban. Pl:
+
 ```javascript
 // @ts-ignore
 new window.OldDoorComponent({
     target: buttonContainer,
     props: {
-        eventName: `${this.__id}_angleChange`
-    }
+        eventName: `${this.__id}_angleChange`,
+    },
 })
 ```
