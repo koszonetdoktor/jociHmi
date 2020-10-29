@@ -137,6 +137,38 @@
             "allowSymbolExpressionsInObject": true,
             "defaultValue": null,
             "defaultValueInternal": false
+        },
+        {
+            "name": "data-tchmi-celpozicio",
+            "displayName": "Celpozicio",
+            "propertyName": "Celpozicio",
+            "propertySetterName": "setCelpozicio",
+            "propertyGetterName": "getCelpozicio",
+            "visible": true,
+            "type": "tchmi:general#/definitions/REAL",
+            "category": "Custom",
+            "description": "Celpozicio",
+            "bindable": true,
+            "heritable": true,
+            "allowSymbolExpressionsInObject": true,
+            "defaultValue": null,
+            "defaultValueInternal": 0
+        },
+        {
+            "name": "data-tchmi-aktualispozicio",
+            "displayName": "AktualisPozicio",
+            "propertyName": "AktualisPozicio",
+            "propertySetterName": "setAktualisPozicio",
+            "propertyGetterName": "getAktualisPozicio",
+            "visible": true,
+            "type": "tchmi:general#/definitions/REAL",
+            "category": "Custom",
+            "description": "Celpozicio",
+            "bindable": true,
+            "heritable": true,
+            "allowSymbolExpressionsInObject": true,
+            "defaultValue": null,
+            "defaultValueInternal": 0
         }
     ],
     "attributeCategories": [],

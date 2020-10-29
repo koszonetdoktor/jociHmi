@@ -38,6 +38,8 @@ module TcHmi {
                 protected __endAngle: number
                 protected __endPosition: boolean
                 protected __startPosition: boolean
+                protected __targetPosition: string
+                protected __currentPosition: string
 
                 public setSzog(angle: number | null) {
                     const angleValue = TcHmi.ValueConverter.toNumber(angle)
@@ -96,7 +98,48 @@ module TcHmi {
                     return this.__startPosition
                 }
 
-                public fireChangeEvent(key: string, value: number | boolean) {
+                public setCelpozicio(position: number | null) {
+                    const positionValue = TcHmi.ValueConverter.toNumber(
+                        position
+                    )?.toFixed(2)
+                    this.__targetPosition = positionValue ?? "0"
+                    TcHmi.EventProvider.raise(
+                        this.__id + ".onPropertyChanged",
+                        { propertyName: "Celpozicio" }
+                    )
+                    this.fireChangeEvent(
+                        "target_position",
+                        this.__targetPosition
+                    )
+                }
+
+                public getCelpozicio() {
+                    return Number(this.__targetPosition)
+                }
+
+                public setAktualisPozicio(position: number | null) {
+                    const positionValue = TcHmi.ValueConverter.toNumber(
+                        position
+                    )?.toFixed(2)
+                    this.__currentPosition = positionValue ?? "0"
+                    TcHmi.EventProvider.raise(
+                        this.__id + ".onPropertyChanged",
+                        { propertyName: "AktualisPozicio" }
+                    )
+                    this.fireChangeEvent(
+                        "current_position",
+                        this.__currentPosition
+                    )
+                }
+
+                public getAktualisPozicio() {
+                    return Number(this.__currentPosition)
+                }
+
+                public fireChangeEvent(
+                    key: string,
+                    value: number | boolean | string
+                ) {
                     document.dispatchEvent(
                         new CustomEvent(`${this.__id}_change`, {
                             detail: {

@@ -26,6 +26,16 @@
             Open Angle
             <input id="open_angle_input" type="number" />
         </label>
+        <div>
+            <label>
+                Target Position
+                <input id="target_position_input" type="number" />
+            </label>
+            <label>
+                Current Position
+                <input id="current_position_input" type="number" />
+            </label>
+        </div>
 
         <script>
             document.addEventListener("DOMContentLoaded", function (event) {
@@ -80,6 +90,32 @@
                     new CustomEvent(`123`, {
                         detail: {
                             key: "open_angle",
+                            value: event.target.value,
+                        },
+                    })
+                )
+            })
+            const targetPosition = document.getElementById(
+                "target_position_input"
+            )
+            targetPosition.addEventListener("change", function (event) {
+                document.dispatchEvent(
+                    new CustomEvent(`123`, {
+                        detail: {
+                            key: "target_position",
+                            value: event.target.value,
+                        },
+                    })
+                )
+            })
+            const currentPosition = document.getElementById(
+                "current_position_input"
+            )
+            currentPosition.addEventListener("change", function (event) {
+                document.dispatchEvent(
+                    new CustomEvent(`123`, {
+                        detail: {
+                            key: "current_position",
                             value: event.target.value,
                         },
                     })

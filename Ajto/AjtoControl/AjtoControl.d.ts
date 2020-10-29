@@ -16,6 +16,8 @@ declare module TcHmi {
                 protected __endAngle: number;
                 protected __endPosition: boolean;
                 protected __startPosition: boolean;
+                protected __targetPosition: string;
+                protected __currentPosition: string;
                 setSzog(angle: number | null): void;
                 getSzog(): number;
                 setNyitasiSzog(angle: number | null): void;
@@ -24,7 +26,11 @@ declare module TcHmi {
                 getNyitottVegallas(): boolean;
                 setZartVegallas(isInPosition: boolean | null): void;
                 getZartVegallas(): boolean;
-                fireChangeEvent(key: string, value: number | boolean): void;
+                setCelpozicio(position: number | null): void;
+                getCelpozicio(): number;
+                setAktualisPozicio(position: number | null): void;
+                getAktualisPozicio(): number;
+                fireChangeEvent(key: string, value: number | boolean | string): void;
                 /**
                  * If raised, the control object exists in control cache and constructor of each inheritation level was called.
                  * Call attribute processor functions here to initialize default values!

@@ -66,6 +66,26 @@ var TcHmi;
                 getZartVegallas() {
                     return this.__startPosition;
                 }
+                setCelpozicio(position) {
+                    var _a;
+                    const positionValue = (_a = TcHmi.ValueConverter.toNumber(position)) === null || _a === void 0 ? void 0 : _a.toFixed(2);
+                    this.__targetPosition = positionValue !== null && positionValue !== void 0 ? positionValue : "0";
+                    TcHmi.EventProvider.raise(this.__id + ".onPropertyChanged", { propertyName: "Celpozicio" });
+                    this.fireChangeEvent("target_position", this.__targetPosition);
+                }
+                getCelpozicio() {
+                    return Number(this.__targetPosition);
+                }
+                setAktualisPozicio(position) {
+                    var _a;
+                    const positionValue = (_a = TcHmi.ValueConverter.toNumber(position)) === null || _a === void 0 ? void 0 : _a.toFixed(2);
+                    this.__currentPosition = positionValue !== null && positionValue !== void 0 ? positionValue : "0";
+                    TcHmi.EventProvider.raise(this.__id + ".onPropertyChanged", { propertyName: "AktualisPozicio" });
+                    this.fireChangeEvent("current_position", this.__currentPosition);
+                }
+                getAktualisPozicio() {
+                    return Number(this.__currentPosition);
+                }
                 fireChangeEvent(key, value) {
                     document.dispatchEvent(new CustomEvent(`${this.__id}_change`, {
                         detail: {

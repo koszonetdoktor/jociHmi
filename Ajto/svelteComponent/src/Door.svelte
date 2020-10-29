@@ -8,8 +8,9 @@
     let hasReachedStart = false
     let hasReachedEnd = false
 
-    let targetPosition = 999999
-    let currentPosition = 999999
+    let targetPosition = "0"
+    let currentPosition = "0"
+
 
     let endAngle = 90
     $: correctEndAngle = 90 - endAngle
@@ -133,7 +134,8 @@
     .position_container {
         position: absolute;
         top: 2px;
-        right: 2px;
+        right: 1rem;
+        text-align: right;
     }
     .position_target {
         color: var(--theme-color-gray);

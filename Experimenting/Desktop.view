@@ -34,7 +34,7 @@
 
 </div>
 
-<div id="TcHmi_Controls_Ajto_AjtoControl" data-tchmi-type="TcHmi.Controls.Ajto.AjtoControl" data-tchmi-height="92" data-tchmi-height-unit="px" data-tchmi-left="269" data-tchmi-left-unit="px" data-tchmi-top="160" data-tchmi-top-unit="px" data-tchmi-width="102" data-tchmi-width-unit="px" data-tchmi-nyitottvegallas="True" data-tchmi-zarttvegallas="True" data-tchmi-nyitasiszog="50">
+<div id="TcHmi_Controls_Ajto_AjtoControl" data-tchmi-type="TcHmi.Controls.Ajto.AjtoControl" data-tchmi-height="92" data-tchmi-height-unit="px" data-tchmi-left="272" data-tchmi-left-unit="px" data-tchmi-top="160" data-tchmi-top-unit="px" data-tchmi-width="102" data-tchmi-width-unit="px" data-tchmi-nyitottvegallas="True" data-tchmi-zarttvegallas="True" data-tchmi-nyitasiszog="50">
 
 </div>
 
@@ -42,7 +42,7 @@
 
 </div>
 
-<div id="TcHmi_Controls_Ajto_AjtoControl_2" data-tchmi-type="TcHmi.Controls.Ajto.AjtoControl" data-tchmi-height="86" data-tchmi-height-unit="px" data-tchmi-left="347" data-tchmi-left-unit="px" data-tchmi-top="404" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-zarttvegallas="False" data-tchmi-nyitottvegallas="False">
+<div id="TcHmi_Controls_Ajto_AjtoControl_2" data-tchmi-type="TcHmi.Controls.Ajto.AjtoControl" data-tchmi-height="86" data-tchmi-height-unit="px" data-tchmi-left="346" data-tchmi-left-unit="px" data-tchmi-top="403" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-zarttvegallas="False" data-tchmi-nyitottvegallas="False" data-tchmi-celpozicio="%ctrl%TcHmi_Controls_Beckhoff_TcHmiTextbox::Text%/ctrl%" data-tchmi-aktualispozicio="%ctrl%TcHmi_Controls_Beckhoff_TcHmiTextbox::Text%/ctrl%">
 
 </div>
 
@@ -50,7 +50,7 @@
 
 </div>
 
-<div id="TcHmi_Controls_Ajto_AjtoControl_4" data-tchmi-type="TcHmi.Controls.Ajto.AjtoControl" data-tchmi-height="80" data-tchmi-height-unit="px" data-tchmi-left="618" data-tchmi-left-unit="px" data-tchmi-top="266" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-nyitottvegallas="True" data-tchmi-zarttvegallas="True">
+<div id="TcHmi_Controls_Ajto_AjtoControl_4" data-tchmi-type="TcHmi.Controls.Ajto.AjtoControl" data-tchmi-height="80" data-tchmi-height-unit="px" data-tchmi-left="616" data-tchmi-left-unit="px" data-tchmi-top="262" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-nyitottvegallas="True" data-tchmi-zarttvegallas="True">
 
 </div>
 
