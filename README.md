@@ -30,3 +30,11 @@ new window.OldDoorComponent({
     },
 })
 ```
+
+5. A nuget pacakge buildelése előtt a `Ajto.nuspec` fájlbana verzió számot növelni kell, semantic versioning alapjan
+
+```
+...
+<version>1.0.3</version>
+...
+```
