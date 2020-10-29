@@ -1,9 +1,15 @@
 <script>
     import { onDestroy, onMount } from "svelte"
+    import {createRootTheme, defaultTheme} from "./theme"
     export let valueChangeEvent
-    
+
+    createRootTheme()
+
     let hasReachedStart = false
     let hasReachedEnd = false
+
+    let targetPosition = 0
+    let currentPosition = 0
 
     let endAngle = 90
     $: correctEndAngle = 90 - endAngle
@@ -36,6 +42,12 @@
             case "start_position": 
                 hasReachedStart = value
                 break
+            case "target_position": 
+                targetPosition = value
+                break
+            case "current_position": 
+                currentPosition = value
+                break
             default:
                 break
         }
@@ -55,7 +67,7 @@
 
 <div
     class="cirlce"
-    style={`background: conic-gradient(from 0turn at 0% 100%, transparent ${correctAngle}deg, #109D0D 0deg)`}
+    style={`background: conic-gradient(from 0turn at 0% 100%, transparent ${correctAngle}deg, var(--theme-color-green) 0deg)`}
 >
     <div
         class="base"
@@ -68,6 +80,8 @@
         class:inPosition={hasReachedStart}
         data-testid="marker_startPosition"
     ></div>
+    <div class="position_target">{targetPosition}</div>
+    <div class="position_current">{currentPosition}</div>
 </div>   
 
 <style>
@@ -76,7 +90,7 @@
         height: 70px;
         border-radius: 0 100% 0 0;
         position: relative;
-        background: conic-gradient(from 0turn at 0% 100%, transparent 12deg, #109D0D 0deg);
+        background: conic-gradient(from 0turn at 0% 100%, transparent 12deg, var(--theme-color-green) 0deg);
     }
 
     .base {
@@ -84,7 +98,7 @@
         margin: auto;
         left: 0;
         bottom: 0;
-        background: #9F9F9F;
+        background: var(--theme-color-gray);
         width: 5%;
         border-radius: 10px;
         height: 105%;
@@ -93,7 +107,15 @@
     }
 
     .inPosition {
-        background-color: #CBCF06;
+        background-color: var(--theme-color-yellow);
         width: 10%;
+    }
+
+    .position_target {
+
+    }
+
+    .position_current {
+
     }
 </style>
