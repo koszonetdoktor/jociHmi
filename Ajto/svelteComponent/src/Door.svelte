@@ -1,6 +1,6 @@
 <script>
     import { onDestroy, onMount } from "svelte"
-    import {createRootTheme, defaultTheme} from "./theme"
+    import { createRootTheme } from "./theme"
     export let valueChangeEvent
 
     createRootTheme()
@@ -8,8 +8,8 @@
     let hasReachedStart = false
     let hasReachedEnd = false
 
-    let targetPosition = 0
-    let currentPosition = 0
+    let targetPosition = 999999
+    let currentPosition = 999999
 
     let endAngle = 90
     $: correctEndAngle = 90 - endAngle
@@ -65,29 +65,48 @@
 
 </script>
 
-<div
-    class="cirlce"
-    style={`background: conic-gradient(from 0turn at 0% 100%, transparent ${correctAngle}deg, var(--theme-color-green) 0deg)`}
->
+<div class="container">
+    <div class="position_container">
+        <div class="position_target">{targetPosition}</div>
+        <div class="position_current">{currentPosition}</div>
+    </div>
     <div
-        class="base"
-        class:inPosition={hasReachedEnd}
-        style={`transform: rotate(${correctEndAngle}deg)`}
-        data-testid="marker_endPosition"
-    ></div>
-    <div
-        class="base"
-        class:inPosition={hasReachedStart}
-        data-testid="marker_startPosition"
-    ></div>
-    <div class="position_target">{targetPosition}</div>
-    <div class="position_current">{currentPosition}</div>
-</div>   
+        class="cirlce"
+        style={`background: conic-gradient(from 0turn at 0% 100%, transparent ${correctAngle}deg, var(--theme-color-green) 0deg)`}
+    >
+        <div
+            class="base"
+            class:inPosition={hasReachedEnd}
+            style={`transform: rotate(${correctEndAngle}deg)`}
+            data-testid="marker_endPosition"
+        ></div>
+        <div
+            class="base"
+            class:inPosition={hasReachedStart}
+            data-testid="marker_startPosition"
+        ></div>
+    </div>   
+
+</div>
+
 
 <style>
+
+    .container {
+        width: 72px;
+        height: 72px;
+        padding: 8px;
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        border: 1px solid var(--theme-color-green);
+        border-radius: 5px;
+        font-family: 'Open Sans', sans-serif;
+    }
+
     .cirlce {
-        width: 70px;
-        height: 70px;
+        width: 50px;
+        height: 50px;
         border-radius: 0 100% 0 0;
         position: relative;
         background: conic-gradient(from 0turn at 0% 100%, transparent 12deg, var(--theme-color-green) 0deg);
@@ -101,7 +120,7 @@
         background: var(--theme-color-gray);
         width: 5%;
         border-radius: 10px;
-        height: 105%;
+        height: 100%;
         transform-origin: bottom left;
         transform: rotate(90deg)
     }
@@ -111,11 +130,15 @@
         width: 10%;
     }
 
-    .position_target {
-
+    .position_container {
+        position: absolute;
+        top: 2px;
+        right: 2px;
     }
-
+    .position_target {
+        color: var(--theme-color-gray);
+    }
     .position_current {
-
+        color: var(--theme-color-green);
     }
 </style>
