@@ -5,7 +5,7 @@
     "namespace": "TcHmi.Controls.Ajto",
     "displayName": "AjtoControl",
     "version": {
-        "full": "1.1.1.0",
+        "full": "1.1.2.0",
         "major": 1,
         "minor": 0,
         "revision": 0,
@@ -18,8 +18,8 @@
     "properties": {
         "containerControl": false,
         "geometry": {
-            "width": 80,
-            "height": 80
+            "width": 85,
+            "height": 85
         }
     },
     "template": "Template.html",
@@ -171,7 +171,7 @@
             "defaultValueInternal": 0
         },
         {
-            "name": "data-tchmi-my-custom-datatype",
+            "name": "data-tchmi-dut-aco-visu",
             "displayName": "DutAcoVisu",
             "propertyName": "DutAcoVisu",
             "propertySetterName": "setDutAcoVisu",
@@ -183,7 +183,8 @@
             "heritable": true,
             "allowSymbolExpressionsInObject": true,
             "defaultValue": null,
-            "defaultValueInternal": {}
+            "defaultValueInternal": {},
+            "type": "tchmi:framework#/definitions/DutAcoVisu"
         }
     ],
     "attributeCategories": [],
@@ -194,7 +195,8 @@
             "schema": "Schema/Types.Schema.json"
         },
         {
-            "schema": "Schema/TypeDefinitions/DutAcoVisu.Schema.json"
+            "name": "tchmi:framework#/definitions/DutAcoVisu",
+            "schema": "Schema/DutAcoVisu.Schema.json"
         }
     ]
 }

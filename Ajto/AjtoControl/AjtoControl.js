@@ -29,8 +29,9 @@ var TcHmi;
                     /** Call base class constructor */
                     super(element, pcElement, attrs);
                 }
-                setDutAcoVisu(struct) {
-                    console.log("Struct", struct);
+                setDutAcoVisu(newValue) {
+                    var convertedValue = TcHmi.ValueConverter.toObject(newValue);
+                    console.log("Converted Struct", convertedValue);
                 }
                 getDutAcoVisu() {
                     console.log("get");

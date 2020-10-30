@@ -41,8 +41,9 @@ module TcHmi {
                 protected __targetPosition: string
                 protected __currentPosition: string
 
-                public setDutAcoVisu(struct: any) {
-                    console.log("Struct", struct)
+                public setDutAcoVisu(newValue: any) {
+                    var convertedValue = TcHmi.ValueConverter.toObject(newValue)
+                    console.log("Converted Struct", convertedValue)
                 }
 
                 public getDutAcoVisu() {

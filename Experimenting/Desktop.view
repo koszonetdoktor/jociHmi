@@ -34,23 +34,13 @@
 
 </div>
 
-<div id="TcHmi_Controls_Ajto_AjtoControl" data-tchmi-type="TcHmi.Controls.Ajto.AjtoControl" data-tchmi-height="92" data-tchmi-height-unit="px" data-tchmi-left="272" data-tchmi-left-unit="px" data-tchmi-top="160" data-tchmi-top-unit="px" data-tchmi-width="102" data-tchmi-width-unit="px" data-tchmi-nyitottvegallas="True" data-tchmi-zarttvegallas="True" data-tchmi-nyitasiszog="50">
+<div id="TcHmi_Controls_Ajto_AjtoControl_1" data-tchmi-type="TcHmi.Controls.Ajto.AjtoControl" data-tchmi-height="101" data-tchmi-height-unit="px" data-tchmi-left="550" data-tchmi-left-unit="px" data-tchmi-top="129" data-tchmi-top-unit="px" data-tchmi-width="121" data-tchmi-width-unit="px" data-tchmi-my-custom-datatype="{rActPos: 34 }" data-tchmi-dut-aco-visu="%s%NeHa.GV.AcoVisu[1]%/s%">
+
+
 
 </div>
 
-<div id="TcHmi_Controls_Ajto_AjtoControl_1" data-tchmi-type="TcHmi.Controls.Ajto.AjtoControl" data-tchmi-height="84" data-tchmi-height-unit="px" data-tchmi-left="553" data-tchmi-left-unit="px" data-tchmi-top="130" data-tchmi-top-unit="px" data-tchmi-width="87" data-tchmi-width-unit="px" data-tchmi-my-custom-datatype="{rActPos: 34 }">
-
-</div>
-
-<div id="TcHmi_Controls_Ajto_AjtoControl_2" data-tchmi-type="TcHmi.Controls.Ajto.AjtoControl" data-tchmi-height="86" data-tchmi-height-unit="px" data-tchmi-left="346" data-tchmi-left-unit="px" data-tchmi-top="403" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-zarttvegallas="False" data-tchmi-nyitottvegallas="False" data-tchmi-celpozicio="%ctrl%TcHmi_Controls_Beckhoff_TcHmiTextbox::Text%/ctrl%" data-tchmi-aktualispozicio="%ctrl%TcHmi_Controls_Beckhoff_TcHmiTextbox::Text%/ctrl%">
-
-</div>
-
-<div id="TcHmi_Controls_Ajto_AjtoControl_3" data-tchmi-type="TcHmi.Controls.Ajto.AjtoControl" data-tchmi-height="80" data-tchmi-height-unit="px" data-tchmi-left="182" data-tchmi-left-unit="px" data-tchmi-top="478" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px">
-
-</div>
-
-<div id="TcHmi_Controls_Ajto_AjtoControl_4" data-tchmi-type="TcHmi.Controls.Ajto.AjtoControl" data-tchmi-height="80" data-tchmi-height-unit="px" data-tchmi-left="616" data-tchmi-left-unit="px" data-tchmi-top="262" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-nyitottvegallas="True" data-tchmi-zarttvegallas="True">
+<div id="TcHmi_Controls_Ajto_AjtoControl_5" data-tchmi-type="TcHmi.Controls.Ajto.AjtoControl" data-tchmi-height="85" data-tchmi-height-unit="px" data-tchmi-left="251" data-tchmi-left-unit="px" data-tchmi-top="155" data-tchmi-top-unit="px" data-tchmi-width="85" data-tchmi-width-unit="px" data-tchmi-my-custom-datatype="{	&quot;rActPos&quot;: 34 }" data-tchmi-dut-aco-visu="%s%NeHa.GV.AcoVisu[10]%/s%">
 
 </div>
 

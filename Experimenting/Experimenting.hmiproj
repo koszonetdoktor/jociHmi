@@ -23,10 +23,17 @@
     <EnableTypeScript>true</EnableTypeScript>
     <AzureFunctionsVersion>v2</AzureFunctionsVersion>
     <Name>Experimenting</Name>
-    <HmiCommunicationRouterPort>10104</HmiCommunicationRouterPort>
+    <HmiCommunicationRouterPort>10106</HmiCommunicationRouterPort>
     <HmiCommunicationServerAuthPort>13000</HmiCommunicationServerAuthPort>
     <HmiInitial>1.12.742.4</HmiInitial>
     <HmiRecent>1.12.742.4</HmiRecent>
+    <HmiTmcFiles>[
+  {
+    "FileName": "C:\\Users\\gergohalmi\\source\\repos\\NeHa201022\\NeHa\\NeHa\\NeHa.tmc",
+    "RootNamespace": "NeHa",
+    "IsFromSolution": false
+  }
+]</HmiTmcFiles>
   </PropertyGroup>
   <PropertyGroup>
     <TwinCATHmi_Tasks>$(TcHmiDirectory)\MSBuild\Beckhoff.TwinCAT.HMI.tasks</TwinCATHmi_Tasks>

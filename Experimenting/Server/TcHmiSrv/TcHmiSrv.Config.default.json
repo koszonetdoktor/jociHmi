@@ -411,8 +411,8 @@
     "NETWORKADAPTER": "",
     "PERMESSAGEDEFLATEENABLED": true,
     "PLAINADMINISTRATIONENABLED": true,
-    "PROJECTNAME": "",
-    "PROJECTVERSION": "",
+    "PROJECTNAME": "Experimenting",
+    "PROJECTVERSION": "1.0.0.0",
     "REMOTEADMINISTRATIONENABLED": true,
     "REMOTESERVERS": {},
     "REMOTESERVERS_CERTIFICATES": [],
@@ -1909,6 +1909,151 @@
                 "function": true
             },
             "USEMAPPING": true
+        },
+        "NeHa.GV.AcoVisu": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "TMC",
+            "MAPPING": "NeHa::GV::AcoVisu",
+            "SCHEMA": {
+                "$ref": "#/definitions/NeHa.ARRAY (0..100) OF dutAcoVisu",
+                "definitions": {
+                    "NeHa.ARRAY (0..100) OF dutAcoVisu": {
+                        "items": {
+                            "$ref": "#/definitions/NeHa.dutAcoVisu"
+                        },
+                        "maxItems": 101,
+                        "minItems": 101,
+                        "type": "array"
+                    },
+                    "NeHa.dutAcoVisu": {
+                        "properties": {
+                            "bAbleToNewDest": {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            "bBrakeOpen": {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            "bClick": {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            "bClickVisuMove": {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            "bDestVelVisible": {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            "bDestVisible": {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            "bDestWriteable": {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            "bDriveOK": {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            "bDriveReset": {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            "bECATOK": {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            "bEnableClick": {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            "bEndPosDown": {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            "bEndPosUp": {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            "bInDest": {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            "bInPrevDest": {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            "bIsStill": {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            "bLimitPosVisible": {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            "bManualMode": {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            "bMove": {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            "bOL": {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            "bPError": {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            "bPosCorr": {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            "bRopeSlack": {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            "bSafeOK": {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            "bVisuMove": {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            "dwActColor": {
+                                "$ref": "tchmi:general#/definitions/DWORD"
+                            },
+                            "dwFillColor": {
+                                "$ref": "tchmi:general#/definitions/DWORD"
+                            },
+                            "iActGroup": {
+                                "$ref": "tchmi:general#/definitions/INT"
+                            },
+                            "iAnglePos": {
+                                "$ref": "tchmi:general#/definitions/INT"
+                            },
+                            "iDestGroup": {
+                                "$ref": "tchmi:general#/definitions/INT"
+                            },
+                            "iID": {
+                                "$ref": "tchmi:general#/definitions/INT"
+                            },
+                            "iLineDestPos": {
+                                "$ref": "tchmi:general#/definitions/INT"
+                            },
+                            "iLineEndPosDown": {
+                                "$ref": "tchmi:general#/definitions/INT"
+                            },
+                            "iLineEndPosUp": {
+                                "$ref": "tchmi:general#/definitions/INT"
+                            },
+                            "iLinePrevDestPos": {
+                                "$ref": "tchmi:general#/definitions/INT"
+                            },
+                            "iNextGroup": {
+                                "$ref": "tchmi:general#/definitions/INT"
+                            },
+                            "rActPos": {
+                                "$ref": "tchmi:general#/definitions/LREAL"
+                            },
+                            "rDestPos": {
+                                "$ref": "tchmi:general#/definitions/LREAL"
+                            },
+                            "rNextDestPos": {
+                                "$ref": "tchmi:general#/definitions/LREAL"
+                            },
+                            "sName": {
+                                "$ref": "tchmi:general#/definitions/STRING(80)"
+                            }
+                        },
+                        "type": "object"
+                    }
+                }
+            },
+            "USEMAPPING": false
         },
         "RefreshDefinitions": {
             "ACCESS": 3,
