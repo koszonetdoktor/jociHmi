@@ -5,7 +5,7 @@
     "namespace": "TcHmi.Controls.Ajto",
     "displayName": "AjtoControl",
     "version": {
-        "full": "1.1.0.0",
+        "full": "1.1.1.0",
         "major": 1,
         "minor": 0,
         "revision": 0,
@@ -169,6 +169,21 @@
             "allowSymbolExpressionsInObject": true,
             "defaultValue": null,
             "defaultValueInternal": 0
+        },
+        {
+            "name": "data-tchmi-my-custom-datatype",
+            "displayName": "DutAcoVisu",
+            "propertyName": "DutAcoVisu",
+            "propertySetterName": "setDutAcoVisu",
+            "propertyGetterName": "getDutAcoVisu",
+            "visible": true,
+            "category": "Custom",
+            "description": "This is a custom array of objects where symbols can be placed inside.",
+            "bindable": true,
+            "heritable": true,
+            "allowSymbolExpressionsInObject": true,
+            "defaultValue": null,
+            "defaultValueInternal": {}
         }
     ],
     "attributeCategories": [],
@@ -177,6 +192,9 @@
     "dataTypes": [
         {
             "schema": "Schema/Types.Schema.json"
+        },
+        {
+            "schema": "Schema/TypeDefinitions/DutAcoVisu.Schema.json"
         }
     ]
 }

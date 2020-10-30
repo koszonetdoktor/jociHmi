@@ -1,0 +1,113 @@
+﻿{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "definitions": {
+    "MyCustomDatatype": {
+      "title": "DutAcoVisu",
+      "type": "object",
+      "propertiesMeta": [
+        {
+          "name": "rActPos",
+          "displayName": "rActPos",
+          "category": "General",
+          "displayPriority": 10,
+          "description": "rActPos - aktualis pozicio",
+          "defaultValue": null,
+          "defaultValueInternal": 0
+        },
+        {
+          "name": "rDestPos",
+          "displayName": "rDestPos",
+          "category": "General",
+          "displayPriority": 10,
+          "description": "Celpozicio",
+          "defaultValue": null,
+          "defaultValueInternal": 0
+        },
+        {
+          "name": "iActGroup",
+          "displayName": "iActGroup",
+          "category": "General",
+          "displayPriority": 10,
+          "description": "csoport",
+          "defaultValue": 0,
+          "defaultValueInternal": 0
+        },
+        {
+          "name": "sName",
+          "displayName": "sName",
+          "category": "General",
+          "displayPriority": 10,
+          "description": "gep nev",
+          "defaultValue": "",
+          "defaultValueInternal": ""
+        },
+        {
+          "name": "rNextDestPos",
+          "displayName": "rNextDestPos",
+          "category": "General",
+          "displayPriority": 10,
+          "description": "gep nev",
+          "defaultValue": "",
+          "defaultValueInternal": ""
+        },
+        {
+          "name": "bEndPosUp",
+          "displayName": "bEndPosUp",
+          "category": "General",
+          "displayPriority": 10,
+          "description": "gep nev",
+          "defaultValue": false,
+          "defaultValueInternal": false
+        },
+        {
+          "name": "bEndPosDown",
+          "displayName": "bEndPosDown",
+          "category": "General",
+          "displayPriority": 10,
+          "description": "gep nev",
+          "defaultValue": false,
+          "defaultValueInternal": false
+        }
+      ],
+      "properties": {
+        "rActPos": {
+          "type": "number",
+          "$ref": "tchmi:general#/definitions/REAL"
+        },
+        "rDestPos": {
+          "type": "number",
+          "$ref": "tchmi:general#/definitions/REAL"
+        },
+        "iActGroup": {
+          "type": "number",
+          "$ref": "tchmi:general#/definitions/INT"
+        },
+        "sName": {
+          "type": "string",
+          "$ref": "tchmi:general#/definitions/STRING"
+        },
+        "rNextDestPos": {
+          "type": "number",
+          "$ref": "tchmi:general#/definitions/REAL"
+        },
+        "bEndPosUp": {
+          "type": "boolean",
+          "$ref": "tchmi:general#/definitions/BOOL"
+        },
+        "bEndPosDown": {
+          "type": "boolean",
+          "$ref": "tchmi:general#/definitions/BOOL"
+        }
+      },
+      "required": [
+        "rActPos",
+        "rDestPos",
+        "iActGroup",
+        "sName",
+        "rNextDestPos",
+        "bEndPosUp",
+        "bEndPosDown"
+      ]
+    }
+  }
+}

@@ -56,6 +56,9 @@
     <Content Include="AjtoControl\componentSrc.js">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="AjtoControl\Schema\DutAcoVisu.Schema.json">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="tsconfig.tpl.json">
       <SubType>Content</SubType>
       <Visible>true</Visible>

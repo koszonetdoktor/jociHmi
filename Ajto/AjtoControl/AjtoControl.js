@@ -29,6 +29,12 @@ var TcHmi;
                     /** Call base class constructor */
                     super(element, pcElement, attrs);
                 }
+                setDutAcoVisu(struct) {
+                    console.log("Struct", struct);
+                }
+                getDutAcoVisu() {
+                    console.log("get");
+                }
                 setSzog(angle) {
                     const angleValue = TcHmi.ValueConverter.toNumber(angle);
                     this.__openAngle = angleValue !== null && angleValue !== void 0 ? angleValue : 0;

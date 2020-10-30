@@ -38,7 +38,7 @@
 
 </div>
 
-<div id="TcHmi_Controls_Ajto_AjtoControl_1" data-tchmi-type="TcHmi.Controls.Ajto.AjtoControl" data-tchmi-height="84" data-tchmi-height-unit="px" data-tchmi-left="553" data-tchmi-left-unit="px" data-tchmi-top="130" data-tchmi-top-unit="px" data-tchmi-width="87" data-tchmi-width-unit="px">
+<div id="TcHmi_Controls_Ajto_AjtoControl_1" data-tchmi-type="TcHmi.Controls.Ajto.AjtoControl" data-tchmi-height="84" data-tchmi-height-unit="px" data-tchmi-left="553" data-tchmi-left-unit="px" data-tchmi-top="130" data-tchmi-top-unit="px" data-tchmi-width="87" data-tchmi-width-unit="px" data-tchmi-my-custom-datatype="{rActPos: 34 }">
 
 </div>
 

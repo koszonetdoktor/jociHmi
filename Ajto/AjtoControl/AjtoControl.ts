@@ -41,6 +41,14 @@ module TcHmi {
                 protected __targetPosition: string
                 protected __currentPosition: string
 
+                public setDutAcoVisu(struct: any) {
+                    console.log("Struct", struct)
+                }
+
+                public getDutAcoVisu() {
+                    console.log("get")
+                }
+
                 public setSzog(angle: number | null) {
                     const angleValue = TcHmi.ValueConverter.toNumber(angle)
                     this.__openAngle = angleValue ?? 0

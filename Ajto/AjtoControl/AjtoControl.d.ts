@@ -18,6 +18,8 @@ declare module TcHmi {
                 protected __startPosition: boolean;
                 protected __targetPosition: string;
                 protected __currentPosition: string;
+                setDutAcoVisu(struct: any): void;
+                getDutAcoVisu(): void;
                 setSzog(angle: number | null): void;
                 getSzog(): number;
                 setNyitasiSzog(angle: number | null): void;
