@@ -1,7 +1,7 @@
 <script lang="ts">
     import { onDestroy, onMount } from "svelte"
     import { createRootTheme } from "./theme"
-    import type {ValueChangeEventDetail} from "./types"
+    import type {GroupNumbers, ValueChangeEventDetail} from "./types"
     export let valueChangeEvent
 
     createRootTheme()
@@ -12,6 +12,7 @@
     let targetPosition = "0"
     let currentPosition = "0"
 
+    let selectedGroup: GroupNumbers = 0
 
     let endAngle = 90
     $: correctEndAngle = 90 - endAngle
@@ -48,6 +49,9 @@
                 break
             case "current_position": 
                 currentPosition = typeof value === "string" ? value : "0"
+                break
+            case "group":
+                selectedGroup = typeof value === "number" ? value : 0
                 break
             default:
                 break
