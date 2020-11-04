@@ -3,6 +3,8 @@ import resolve from "@rollup/plugin-node-resolve"
 import commonjs from "@rollup/plugin-commonjs"
 import livereload from "rollup-plugin-livereload"
 import { terser } from "rollup-plugin-terser"
+import autoPreprocess from "svelte-preprocess"
+import typescript from "@rollup/plugin-typescript"
 
 const production = !process.env.ROLLUP_WATCH
 
@@ -17,13 +19,14 @@ export default {
         svelte({
             // enable run-time checks when not in production
             dev: !production,
+            preprocess: autoPreprocess(),
         }),
         resolve({
             browser: true,
             dedupe: ["svelte"],
         }),
         commonjs(),
-
+        typescript({ sourceMap: !production }),
         // In dev mode, call `npm run start` once
         // the bundle has been generated
         !production && serve(),

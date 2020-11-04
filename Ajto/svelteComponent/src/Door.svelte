@@ -1,6 +1,7 @@
-<script>
+<script lang="ts">
     import { onDestroy, onMount } from "svelte"
     import { createRootTheme } from "./theme"
+    import type {ValueChangeEventDetail} from "./types"
     export let valueChangeEvent
 
     createRootTheme()
@@ -23,37 +24,37 @@
     })
 
     onDestroy(() => {
-        document.removeEventListener(eventName, eventHandler)
+        document.removeEventListener(valueChangeEvent, eventHandler)
     })
 
-    function eventHandler(event) {
+    function eventHandler(event: {detail: ValueChangeEventDetail}) {
         const {key, value} = event.detail
         console.log("EVENT", key, value)
         switch(key) {
             case "open_angle": 
-                openAngle = limitAngle(value)
+                openAngle = limitAngle(Number(value))
                 break 
             case "end_angle": 
-                endAngle = limitAngle(value)
+                endAngle = limitAngle(Number(value))
                 break
             case "end_position": 
-                hasReachedEnd = value
+                hasReachedEnd = Boolean(value)
                 break
             case "start_position": 
-                hasReachedStart = value
+                hasReachedStart = Boolean(value)
                 break
             case "target_position": 
-                targetPosition = value
+                targetPosition = typeof value === "string" ? value : "0"
                 break
             case "current_position": 
-                currentPosition = value
+                currentPosition = typeof value === "string" ? value : "0"
                 break
             default:
                 break
         }
-    }
+    }  
 
-    function limitAngle(angleValue) {
+    function limitAngle(angleValue: number): number {
         let limitedValue = angleValue
         if(limitedValue > 90) {
             limitedValue = 90
