@@ -37,6 +37,17 @@
             </label>
         </div>
 
+        <div>
+            <label>
+                Group
+                <select id="group_select">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+            </label>
+        </div>
+
         <script>
             document.addEventListener("DOMContentLoaded", function (event) {
                 new window.DoorComponent({
@@ -117,6 +128,18 @@
                         detail: {
                             key: "current_position",
                             value: event.target.value,
+                        },
+                    })
+                )
+            })
+
+            const groupSelect = document.getElementById("group_select")
+            groupSelect.addEventListener("change", function (event) {
+                document.dispatchEvent(
+                    new CustomEvent(`123`, {
+                        detail: {
+                            key: "group",
+                            value: Number(event.target.value),
                         },
                     })
                 )

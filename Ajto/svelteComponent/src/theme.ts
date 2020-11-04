@@ -1,16 +1,19 @@
+import type { GroupNumbers } from "./types"
+
 type Theme = typeof defaultTheme & { name?: string }
 
 const defaultTheme = {
     color: {
-        green: "#3DBD92",
+        green: "#27AA83",
         yellow: "#CBCF06",
-        gray: "#9F9F9F",
-        blue: "#6D6DF3",
+        gray: "#617D98",
+        blue: "#5B5DEC",
+        lightGreen: "#8CEDC6",
+        lightBlue: "#A2A7FB",
     },
 }
 
 export const createRootTheme = (theme: Theme = defaultTheme) => {
-    console.log("theme", theme)
     let themeName = "theme"
     if (theme.name) {
         themeName = theme.name
@@ -24,4 +27,10 @@ export const createRootTheme = (theme: Theme = defaultTheme) => {
             )
         })
     }
+}
+
+export const groupColorMap = {
+    [0]: "var(--theme-color-gray)",
+    [1]: "var(--theme-color-lightGreen)",
+    [2]: "var(--theme-color-lightBlue)",
 }

@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onDestroy, onMount } from "svelte"
-    import { createRootTheme } from "./theme"
+    import { createRootTheme, groupColorMap } from "./theme"
     import type {GroupNumbers, ValueChangeEventDetail} from "./types"
     export let valueChangeEvent
 
@@ -70,7 +70,7 @@
 
 </script>
 
-<div class="container">
+<div class="container" style={`border: 3px solid ${groupColorMap[selectedGroup]};`}>
     <div class="position_container">
         <div class="position_target">{targetPosition}</div>
         <div class="position_current">{currentPosition}</div>
@@ -104,7 +104,6 @@
         position: relative;
         display: flex;
         align-items: flex-end;
-        border: 1px solid var(--theme-color-green);
         border-radius: 5px;
         font-family: 'Open Sans', sans-serif;
     }
