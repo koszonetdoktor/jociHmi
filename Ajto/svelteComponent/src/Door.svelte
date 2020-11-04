@@ -19,7 +19,6 @@
     $: correctAngle = 90 - openAngle
 
     onMount(() => {
-        console.log("Subscribe on event:", valueChangeEvent)
         document.addEventListener(valueChangeEvent, eventHandler)
     })
 

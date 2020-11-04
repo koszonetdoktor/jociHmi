@@ -5,6 +5,16 @@
 module TcHmi {
     export module Controls {
         export module Ajto {
+            interface DutAcoVisu {
+                rActPos: number
+                rDestPost: number
+                iActGroup: number
+                sName: string
+                rNextDestPos: number
+                bEndPosUp: boolean
+                bEndPosDown: boolean
+            }
+
             export class AjtoControl extends TcHmi.Controls.System
                 .TcHmiControl {
                 /*
@@ -41,23 +51,61 @@ module TcHmi {
                 protected __targetPosition: string
                 protected __currentPosition: string
 
-                public setDutAcoVisu(newValue: any) {
-                    var convertedValue = TcHmi.ValueConverter.toObject(newValue)
-                    console.log("Converted Struct", convertedValue)
+                protected __dutAcoVisu: DutAcoVisu | null
+
+                public setDutAcoVisu(newValue: DutAcoVisu) {
+                    const convertedValue = TcHmi.ValueConverter.toObject<
+                        DutAcoVisu
+                    >(newValue)
+                    this.__dutAcoVisu = convertedValue
+                    console.log("DUT", this.__dutAcoVisu)
+                    TcHmi.EventProvider.raise(
+                        this.__id + ".onPropertyChanged",
+                        { propertyName: "DutAcoVisu" }
+                    )
+                    this.fireChangeEvents()
                 }
 
                 public getDutAcoVisu() {
-                    console.log("get")
+                    return this.__dutAcoVisu
+                }
+
+                private fireChangeEvents() {
+                    const eventValues: {
+                        [eventName: string]: string | boolean
+                    } = {
+                        open_angle:
+                            this.__dutAcoVisu?.rActPos.toFixed(2) ?? "0",
+                        end_angle:
+                            this.__dutAcoVisu?.rNextDestPos.toFixed(2) ?? "0",
+                        end_position: this.__dutAcoVisu?.bEndPosUp ?? false,
+                        start_position: this.__dutAcoVisu?.bEndPosDown ?? false,
+                        target_position:
+                            this.__dutAcoVisu?.rNextDestPos.toFixed(2) ?? "0",
+                        current_position:
+                            this.__dutAcoVisu?.rActPos.toFixed(2) ?? "0",
+                    }
+
+                    Object.keys(eventValues).forEach((event) => {
+                        document.dispatchEvent(
+                            new CustomEvent(`${this.__id}_change`, {
+                                detail: {
+                                    key: event,
+                                    value: eventValues[event],
+                                },
+                            })
+                        )
+                    })
                 }
 
                 public setSzog(angle: number | null) {
                     const angleValue = TcHmi.ValueConverter.toNumber(angle)
                     this.__openAngle = angleValue ?? 0
-                    TcHmi.EventProvider.raise(
-                        this.__id + ".onPropertyChanged",
-                        { propertyName: "Szog" }
-                    )
-                    this.fireChangeEvent("open_angle", this.__openAngle)
+                    // TcHmi.EventProvider.raise(
+                    //     this.__id + ".onPropertyChanged",
+                    //     { propertyName: "Szog" }
+                    // )
+                    // this.fireChangeEvent("open_angle", this.__openAngle)
                 }
 
                 public getSzog() {
@@ -67,11 +115,11 @@ module TcHmi {
                 public setNyitasiSzog(angle: number | null) {
                     const angleValue = TcHmi.ValueConverter.toNumber(angle)
                     this.__endAngle = angleValue ?? 0
-                    TcHmi.EventProvider.raise(
-                        this.__id + ".onPropertyChanged",
-                        { propertyName: "NyitasiSzog" }
-                    )
-                    this.fireChangeEvent("end_angle", this.__endAngle)
+                    // TcHmi.EventProvider.raise(
+                    //     this.__id + ".onPropertyChanged",
+                    //     { propertyName: "NyitasiSzog" }
+                    // )
+                    // this.fireChangeEvent("end_angle", this.__endAngle)
                 }
 
                 public getNyitasiSzog() {
@@ -82,11 +130,11 @@ module TcHmi {
                     console.log("positon", isInPosition)
                     this.__endPosition =
                         TcHmi.ValueConverter.toBoolean(isInPosition) ?? false
-                    TcHmi.EventProvider.raise(
-                        this.__id + ".onPropertyChanged",
-                        { propertyName: "NyitottVegallas" }
-                    )
-                    this.fireChangeEvent("end_position", this.__endPosition)
+                    // TcHmi.EventProvider.raise(
+                    //     this.__id + ".onPropertyChanged",
+                    //     { propertyName: "NyitottVegallas" }
+                    // )
+                    // this.fireChangeEvent("end_position", this.__endPosition)
                 }
 
                 public getNyitottVegallas() {
@@ -96,11 +144,11 @@ module TcHmi {
                 public setZartVegallas(isInPosition: boolean | null) {
                     this.__startPosition =
                         TcHmi.ValueConverter.toBoolean(isInPosition) ?? false
-                    TcHmi.EventProvider.raise(
-                        this.__id + ".onPropertyChanged",
-                        { propertyName: "ZartVegallas" }
-                    )
-                    this.fireChangeEvent("start_position", this.__startPosition)
+                    // TcHmi.EventProvider.raise(
+                    //     this.__id + ".onPropertyChanged",
+                    //     { propertyName: "ZartVegallas" }
+                    // )
+                    // this.fireChangeEvent("start_position", this.__startPosition)
                 }
 
                 public getZartVegallas() {
@@ -112,14 +160,14 @@ module TcHmi {
                         position
                     )?.toFixed(2)
                     this.__targetPosition = positionValue ?? "0"
-                    TcHmi.EventProvider.raise(
-                        this.__id + ".onPropertyChanged",
-                        { propertyName: "Celpozicio" }
-                    )
-                    this.fireChangeEvent(
-                        "target_position",
-                        this.__targetPosition
-                    )
+                    // TcHmi.EventProvider.raise(
+                    //     this.__id + ".onPropertyChanged",
+                    //     { propertyName: "Celpozicio" }
+                    // )
+                    // this.fireChangeEvent(
+                    //     "target_position",
+                    //     this.__targetPosition
+                    // )
                 }
 
                 public getCelpozicio() {
@@ -131,14 +179,14 @@ module TcHmi {
                         position
                     )?.toFixed(2)
                     this.__currentPosition = positionValue ?? "0"
-                    TcHmi.EventProvider.raise(
-                        this.__id + ".onPropertyChanged",
-                        { propertyName: "AktualisPozicio" }
-                    )
-                    this.fireChangeEvent(
-                        "current_position",
-                        this.__currentPosition
-                    )
+                    // TcHmi.EventProvider.raise(
+                    //     this.__id + ".onPropertyChanged",
+                    //     { propertyName: "AktualisPozicio" }
+                    // )
+                    // this.fireChangeEvent(
+                    //     "current_position",
+                    //     this.__currentPosition
+                    // )
                 }
 
                 public getAktualisPozicio() {

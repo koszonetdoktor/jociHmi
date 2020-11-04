@@ -1,7 +1,16 @@
 declare module TcHmi {
     module Controls {
         module Ajto {
-            class AjtoControl extends TcHmi.Controls.System
+            interface DutAcoVisu {
+                rActPos: number;
+                rDestPost: number;
+                iActGroup: number;
+                sName: string;
+                rNextDestPos: number;
+                bEndPosUp: boolean;
+                bEndPosDown: boolean;
+            }
+            export class AjtoControl extends TcHmi.Controls.System
                 .TcHmiControl {
                 /**
                  * @description Constructor of the control
@@ -18,8 +27,10 @@ declare module TcHmi {
                 protected __startPosition: boolean;
                 protected __targetPosition: string;
                 protected __currentPosition: string;
-                setDutAcoVisu(newValue: any): void;
-                getDutAcoVisu(): void;
+                protected __dutAcoVisu: DutAcoVisu | null;
+                setDutAcoVisu(newValue: DutAcoVisu): void;
+                getDutAcoVisu(): DutAcoVisu | null;
+                private fireChangeEvents;
                 setSzog(angle: number | null): void;
                 getSzog(): number;
                 setNyitasiSzog(angle: number | null): void;
@@ -59,6 +70,7 @@ declare module TcHmi {
                  */
                 destroy(): void;
             }
+            export {};
         }
     }
 }

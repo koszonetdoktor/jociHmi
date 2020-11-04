@@ -1,5 +1,9 @@
 ﻿[
   {
+    "id": "Ajto",
+    "version": "1.1.4"
+  },
+  {
     "id": "Beckhoff.TwinCAT.HMI.Controls",
     "version": "12.742.5"
   },

@@ -30,17 +30,42 @@ var TcHmi;
                     super(element, pcElement, attrs);
                 }
                 setDutAcoVisu(newValue) {
-                    var convertedValue = TcHmi.ValueConverter.toObject(newValue);
-                    console.log("Converted Struct", convertedValue);
+                    const convertedValue = TcHmi.ValueConverter.toObject(newValue);
+                    this.__dutAcoVisu = convertedValue;
+                    console.log("DUT", this.__dutAcoVisu);
+                    TcHmi.EventProvider.raise(this.__id + ".onPropertyChanged", { propertyName: "DutAcoVisu" });
+                    this.fireChangeEvents();
                 }
                 getDutAcoVisu() {
-                    console.log("get");
+                    return this.__dutAcoVisu;
+                }
+                fireChangeEvents() {
+                    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+                    const eventValues = {
+                        open_angle: (_b = (_a = this.__dutAcoVisu) === null || _a === void 0 ? void 0 : _a.rActPos.toFixed(2)) !== null && _b !== void 0 ? _b : "0",
+                        end_angle: (_d = (_c = this.__dutAcoVisu) === null || _c === void 0 ? void 0 : _c.rNextDestPos.toFixed(2)) !== null && _d !== void 0 ? _d : "0",
+                        end_position: (_f = (_e = this.__dutAcoVisu) === null || _e === void 0 ? void 0 : _e.bEndPosUp) !== null && _f !== void 0 ? _f : false,
+                        start_position: (_h = (_g = this.__dutAcoVisu) === null || _g === void 0 ? void 0 : _g.bEndPosDown) !== null && _h !== void 0 ? _h : false,
+                        target_position: (_k = (_j = this.__dutAcoVisu) === null || _j === void 0 ? void 0 : _j.rNextDestPos.toFixed(2)) !== null && _k !== void 0 ? _k : "0",
+                        current_position: (_m = (_l = this.__dutAcoVisu) === null || _l === void 0 ? void 0 : _l.rActPos.toFixed(2)) !== null && _m !== void 0 ? _m : "0",
+                    };
+                    Object.keys(eventValues).forEach((event) => {
+                        document.dispatchEvent(new CustomEvent(`${this.__id}_change`, {
+                            detail: {
+                                key: event,
+                                value: eventValues[event],
+                            },
+                        }));
+                    });
                 }
                 setSzog(angle) {
                     const angleValue = TcHmi.ValueConverter.toNumber(angle);
                     this.__openAngle = angleValue !== null && angleValue !== void 0 ? angleValue : 0;
-                    TcHmi.EventProvider.raise(this.__id + ".onPropertyChanged", { propertyName: "Szog" });
-                    this.fireChangeEvent("open_angle", this.__openAngle);
+                    // TcHmi.EventProvider.raise(
+                    //     this.__id + ".onPropertyChanged",
+                    //     { propertyName: "Szog" }
+                    // )
+                    // this.fireChangeEvent("open_angle", this.__openAngle)
                 }
                 getSzog() {
                     return this.__openAngle;
@@ -48,8 +73,11 @@ var TcHmi;
                 setNyitasiSzog(angle) {
                     const angleValue = TcHmi.ValueConverter.toNumber(angle);
                     this.__endAngle = angleValue !== null && angleValue !== void 0 ? angleValue : 0;
-                    TcHmi.EventProvider.raise(this.__id + ".onPropertyChanged", { propertyName: "NyitasiSzog" });
-                    this.fireChangeEvent("end_angle", this.__endAngle);
+                    // TcHmi.EventProvider.raise(
+                    //     this.__id + ".onPropertyChanged",
+                    //     { propertyName: "NyitasiSzog" }
+                    // )
+                    // this.fireChangeEvent("end_angle", this.__endAngle)
                 }
                 getNyitasiSzog() {
                     return this.__endAngle;
@@ -58,8 +86,11 @@ var TcHmi;
                     var _a;
                     console.log("positon", isInPosition);
                     this.__endPosition = (_a = TcHmi.ValueConverter.toBoolean(isInPosition)) !== null && _a !== void 0 ? _a : false;
-                    TcHmi.EventProvider.raise(this.__id + ".onPropertyChanged", { propertyName: "NyitottVegallas" });
-                    this.fireChangeEvent("end_position", this.__endPosition);
+                    // TcHmi.EventProvider.raise(
+                    //     this.__id + ".onPropertyChanged",
+                    //     { propertyName: "NyitottVegallas" }
+                    // )
+                    // this.fireChangeEvent("end_position", this.__endPosition)
                 }
                 getNyitottVegallas() {
                     return this.__endPosition;
@@ -67,8 +98,11 @@ var TcHmi;
                 setZartVegallas(isInPosition) {
                     var _a;
                     this.__startPosition = (_a = TcHmi.ValueConverter.toBoolean(isInPosition)) !== null && _a !== void 0 ? _a : false;
-                    TcHmi.EventProvider.raise(this.__id + ".onPropertyChanged", { propertyName: "ZartVegallas" });
-                    this.fireChangeEvent("start_position", this.__startPosition);
+                    // TcHmi.EventProvider.raise(
+                    //     this.__id + ".onPropertyChanged",
+                    //     { propertyName: "ZartVegallas" }
+                    // )
+                    // this.fireChangeEvent("start_position", this.__startPosition)
                 }
                 getZartVegallas() {
                     return this.__startPosition;
@@ -77,8 +111,14 @@ var TcHmi;
                     var _a;
                     const positionValue = (_a = TcHmi.ValueConverter.toNumber(position)) === null || _a === void 0 ? void 0 : _a.toFixed(2);
                     this.__targetPosition = positionValue !== null && positionValue !== void 0 ? positionValue : "0";
-                    TcHmi.EventProvider.raise(this.__id + ".onPropertyChanged", { propertyName: "Celpozicio" });
-                    this.fireChangeEvent("target_position", this.__targetPosition);
+                    // TcHmi.EventProvider.raise(
+                    //     this.__id + ".onPropertyChanged",
+                    //     { propertyName: "Celpozicio" }
+                    // )
+                    // this.fireChangeEvent(
+                    //     "target_position",
+                    //     this.__targetPosition
+                    // )
                 }
                 getCelpozicio() {
                     return Number(this.__targetPosition);
@@ -87,8 +127,14 @@ var TcHmi;
                     var _a;
                     const positionValue = (_a = TcHmi.ValueConverter.toNumber(position)) === null || _a === void 0 ? void 0 : _a.toFixed(2);
                     this.__currentPosition = positionValue !== null && positionValue !== void 0 ? positionValue : "0";
-                    TcHmi.EventProvider.raise(this.__id + ".onPropertyChanged", { propertyName: "AktualisPozicio" });
-                    this.fireChangeEvent("current_position", this.__currentPosition);
+                    // TcHmi.EventProvider.raise(
+                    //     this.__id + ".onPropertyChanged",
+                    //     { propertyName: "AktualisPozicio" }
+                    // )
+                    // this.fireChangeEvent(
+                    //     "current_position",
+                    //     this.__currentPosition
+                    // )
                 }
                 getAktualisPozicio() {
                     return Number(this.__currentPosition);
