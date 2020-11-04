@@ -3,6 +3,7 @@ export type ValueChangeEventDetail =
     | LimitPositionsReached
     | PositionChange
     | GroupChange
+    | BrakeOpenChange
 
 interface AngleChange {
     key: "open_angle" | "end_angle"
@@ -11,17 +12,22 @@ interface AngleChange {
 
 interface LimitPositionsReached {
     key: "end_position" | "start_position"
-    value: boolean
+    value?: boolean
 }
 
 interface PositionChange {
     key: "target_position" | "current_position"
-    value: string
+    value?: string
 }
 
 interface GroupChange {
     key: "group"
-    value: GroupNumbers
+    value?: GroupNumbers
+}
+
+interface BrakeOpenChange {
+    key: "brake_open"
+    value?: boolean
 }
 
 export type GroupNumbers = 0 | 1 | 2

@@ -47,6 +47,12 @@
                 </select>
             </label>
         </div>
+        <div>
+            <label>
+                Brake Open
+                <input type="checkbox" id="brake_open" />
+            </label>
+        </div>
 
         <script>
             document.addEventListener("DOMContentLoaded", function (event) {
@@ -140,6 +146,18 @@
                         detail: {
                             key: "group",
                             value: Number(event.target.value),
+                        },
+                    })
+                )
+            })
+
+            const brakeOpen = document.getElementById("brake_open")
+            brakeOpen.addEventListener("change", function (event) {
+                document.dispatchEvent(
+                    new CustomEvent(`123`, {
+                        detail: {
+                            key: "brake_open",
+                            value: event.target.checked,
                         },
                     })
                 )

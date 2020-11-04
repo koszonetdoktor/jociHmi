@@ -32,5 +32,5 @@ export const createRootTheme = (theme: Theme = defaultTheme) => {
 export const groupColorMap = {
     [0]: "var(--theme-color-gray)",
     [1]: "var(--theme-color-lightGreen)",
-    [2]: "var(--theme-color-lightBlue)",
+    [2]: "var(--theme-color-blue)",
 }

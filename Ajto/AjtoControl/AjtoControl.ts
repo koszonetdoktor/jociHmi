@@ -13,6 +13,7 @@ module TcHmi {
                 rNextDestPos: number
                 bEndPosUp: boolean
                 bEndPosDown: boolean
+                bBrakeOpen: boolean
             }
 
             export class AjtoControl extends TcHmi.Controls.System
@@ -72,7 +73,7 @@ module TcHmi {
 
                 private fireChangeEvents() {
                     const eventValues: {
-                        [eventName: string]: string | boolean
+                        [eventName: string]: string | boolean | number
                     } = {
                         open_angle:
                             this.__dutAcoVisu?.rActPos.toFixed(2) ?? "0",
@@ -84,6 +85,8 @@ module TcHmi {
                             this.__dutAcoVisu?.rNextDestPos.toFixed(2) ?? "0",
                         current_position:
                             this.__dutAcoVisu?.rActPos.toFixed(2) ?? "0",
+                        group: this.__dutAcoVisu?.iActGroup ?? 0,
+                        brake_open: this.__dutAcoVisu?.bBrakeOpen ?? false,
                     }
 
                     Object.keys(eventValues).forEach((event) => {

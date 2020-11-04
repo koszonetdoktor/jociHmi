@@ -2,7 +2,7 @@
     import { onDestroy, onMount } from "svelte"
     import { createRootTheme, groupColorMap } from "./theme"
     import type {GroupNumbers, ValueChangeEventDetail} from "./types"
-import { limitAngle } from "./utils";
+    import { limitAngle } from "./utils";
     export let valueChangeEvent
     let hasReachedStart = false
     let hasReachedEnd = false
@@ -17,6 +17,9 @@ import { limitAngle } from "./utils";
 
     let openAngle = 30
     $: correctAngle = 90 - openAngle
+
+    let brakeOpen = false
+    $: brakeColor = brakeOpen ? "var(--theme-color-green)" : "var(--theme-color-lightBlue)"
 
     onMount(() => {
         createRootTheme()
@@ -43,13 +46,16 @@ import { limitAngle } from "./utils";
                 hasReachedStart = Boolean(value)
                 break
             case "target_position": 
-                targetPosition = typeof value === "string" ? value : "0"
+                targetPosition = value.toString()
                 break
             case "current_position": 
-                currentPosition = typeof value === "string" ? value : "0"
+                currentPosition = value.toString()
                 break
             case "group":
                 selectedGroup = typeof value === "number" ? value : 0
+                break
+            case "brake_open": 
+                brakeOpen = Boolean(value)
                 break
             default:
                 break
@@ -62,11 +68,11 @@ import { limitAngle } from "./utils";
 <div class="container" style={`border: 3px solid ${groupColorMap[selectedGroup]};`}>
     <div class="position_container">
         <div class="position_target">{targetPosition}</div>
-        <div class="position_current">{currentPosition}</div>
+        <div class="position_current" style={`color: ${brakeColor}`} >{currentPosition}</div>
     </div>
     <div
         class="cirlce"
-        style={`background: conic-gradient(from 0turn at 0% 100%, transparent ${correctAngle}deg, var(--theme-color-green) 0deg)`}
+        style={`background: conic-gradient(from 0turn at 0% 100%, transparent ${correctAngle}deg, ${brakeColor} 0deg)`}
     >
         <div
             class="base"

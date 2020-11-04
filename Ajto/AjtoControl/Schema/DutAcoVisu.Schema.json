@@ -68,6 +68,15 @@
                     "description": "gep nev",
                     "defaultValue": false,
                     "defaultValueInternal": false
+                },
+                {
+                    "name": "bBrakeOpen",
+                    "displayName": "bBrakeOpen",
+                    "category": "General",
+                    "displayPriority": 10,
+                    "description": "fek nyitva",
+                    "defaultValue": false,
+                    "defaultValueInternal": false
                 }
             ],
             "properties": {
@@ -91,6 +100,9 @@
                 },
                 "bEndPosDown": {
                     "$ref": "tchmi:general#/definitions/BOOL"
+                },
+                "bBrakeOpen": {
+                    "$ref": "tchmi:general#/definitions/BOOL"
                 }
             },
             "required": [
@@ -100,7 +112,8 @@
                 "sName",
                 "rNextDestPos",
                 "bEndPosUp",
-                "bEndPosDown"
+                "bEndPosDown",
+                "bBrakeOpen"
             ]
         }
     }
