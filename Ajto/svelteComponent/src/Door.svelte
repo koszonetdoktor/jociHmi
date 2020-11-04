@@ -2,10 +2,8 @@
     import { onDestroy, onMount } from "svelte"
     import { createRootTheme, groupColorMap } from "./theme"
     import type {GroupNumbers, ValueChangeEventDetail} from "./types"
+import { limitAngle } from "./utils";
     export let valueChangeEvent
-
-    createRootTheme()
-
     let hasReachedStart = false
     let hasReachedEnd = false
 
@@ -21,6 +19,7 @@
     $: correctAngle = 90 - openAngle
 
     onMount(() => {
+        createRootTheme()
         document.addEventListener(valueChangeEvent, eventHandler)
     })
 
@@ -30,7 +29,6 @@
 
     function eventHandler(event: {detail: ValueChangeEventDetail}) {
         const {key, value} = event.detail
-        console.log("EVENT", key, value)
         switch(key) {
             case "open_angle": 
                 openAngle = limitAngle(Number(value))
@@ -57,16 +55,7 @@
                 break
         }
     }  
-
-    function limitAngle(angleValue: number): number {
-        let limitedValue = angleValue
-        if(limitedValue > 90) {
-            limitedValue = 90
-        } else if(limitedValue < 0) {
-            limitedValue = 0
-        }
-        return limitedValue
-    }
+    
 
 </script>
 
